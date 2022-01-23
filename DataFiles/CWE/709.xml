@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Weakness_Catalog xmlns="http://cwe.mitre.org/cwe-6" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="VIEW LIST: CWE-709: Named Chains" Version="4.6" Date="2021-10-28" xsi:schemaLocation="http://cwe.mitre.org/cwe-6 http://cwe.mitre.org/data/xsd/cwe_schema_v6.6.xsd">
+   <Weaknesses>
+      <Weakness ID="680" Name="Integer Overflow to Buffer Overflow" Abstraction="Compound" Structure="Chain" Status="Draft">
+         <Description>The product performs a calculation to determine how much memory to allocate, but an integer overflow can occur that causes less memory to be allocated than expected, leading to a buffer overflow.</Description>
+         <Related_Weaknesses>
+            <Related_Weakness Nature="StartsWith" CWE_ID="190" View_ID="709" Chain_ID="680"/>
+            <Related_Weakness Nature="ChildOf" CWE_ID="119" View_ID="1000" Ordinal="Primary"/>
+         </Related_Weaknesses>
+         <Applicable_Platforms>
+            <Language Class="Language-Independent" Prevalence="Undetermined"/>
+         </Applicable_Platforms>
+         <Common_Consequences>
+            <Consequence>
+               <Scope>Integrity</Scope>
+               <Scope>Availability</Scope>
+               <Scope>Confidentiality</Scope>
+               <Impact>Modify Memory</Impact>
+               <Impact>DoS: Crash, Exit, or Restart</Impact>
+               <Impact>Execute Unauthorized Code or Commands</Impact>
+            </Consequence>
+         </Common_Consequences>
+         <Observed_Examples>
+            <Observed_Example>
+               <Reference>CVE-2017-1000121</Reference>
+               <Description>chain: unchecked message size metadata allows integer overflow (CWE-190) leading to buffer overflow (CWE-119).</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-1000121</Link>
+            </Observed_Example>
+         </Observed_Examples>
+         <Taxonomy_Mappings>
+            <Taxonomy_Mapping Taxonomy_Name="CERT C Secure Coding">
+               <Entry_ID>INT30-C</Entry_ID>
+               <Entry_Name>Ensure that unsigned integer operations do not wrap</Entry_Name>
+               <Mapping_Fit>Imprecise</Mapping_Fit>
+            </Taxonomy_Mapping>
+            <Taxonomy_Mapping Taxonomy_Name="CERT C Secure Coding">
+               <Entry_ID>INT32-C</Entry_ID>
+               <Entry_Name>Ensure that operations on signed integers do not result in overflow</Entry_Name>
+               <Mapping_Fit>Imprecise</Mapping_Fit>
+            </Taxonomy_Mapping>
+            <Taxonomy_Mapping Taxonomy_Name="CERT C Secure Coding">
+               <Entry_ID>MEM35-C</Entry_ID>
+               <Entry_Name>Allocate sufficient memory for an object</Entry_Name>
+               <Mapping_Fit>CWE More Abstract</Mapping_Fit>
+            </Taxonomy_Mapping>
+         </Taxonomy_Mappings>
+         <Related_Attack_Patterns>
+            <Related_Attack_Pattern CAPEC_ID="10"/>
+            <Related_Attack_Pattern CAPEC_ID="100"/>
+            <Related_Attack_Pattern CAPEC_ID="14"/>
+            <Related_Attack_Pattern CAPEC_ID="24"/>
+            <Related_Attack_Pattern CAPEC_ID="45"/>
+            <Related_Attack_Pattern CAPEC_ID="46"/>
+            <Related_Attack_Pattern CAPEC_ID="47"/>
+            <Related_Attack_Pattern CAPEC_ID="67"/>
+            <Related_Attack_Pattern CAPEC_ID="8"/>
+            <Related_Attack_Pattern CAPEC_ID="9"/>
+            <Related_Attack_Pattern CAPEC_ID="92"/>
+         </Related_Attack_Patterns>
+         <Content_History>
+            <Submission>
+                <Submission_Name>CWE Content Team</Submission_Name>
+				<Submission_Organization>MITRE</Submission_Organization>
+                <Submission_Date>2008-04-11</Submission_Date>
+            </Submission>
+            <Modification>
+               <Modification_Name>Eric Dalci</Modification_Name>
+               <Modification_Organization>Cigital</Modification_Organization>
+               <Modification_Date>2008-07-01</Modification_Date>
+               <Modification_Comment>updated Time_of_Introduction</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2008-09-08</Modification_Date>
+               <Modification_Comment>updated Relationships</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2009-03-10</Modification_Date>
+               <Modification_Comment>updated Related_Attack_Patterns</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2011-06-01</Modification_Date>
+               <Modification_Comment>updated Common_Consequences</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2017-01-19</Modification_Date>
+               <Modification_Comment>updated Relationships</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2017-11-08</Modification_Date>
+               <Modification_Comment>updated Applicable_Platforms, Observed_Examples, Relationships, Relevant_Properties, Taxonomy_Mappings</Modification_Comment>
+            </Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2019-01-03</Modification_Date>
+					<Modification_Comment>updated Relationships</Modification_Comment>
+				</Modification>
+         </Content_History>
+      </Weakness>
+      <Weakness ID="690" Name="Unchecked Return Value to NULL Pointer Dereference" Abstraction="Compound" Structure="Chain" Status="Draft">
+         <Description>The product does not check for an error after calling a function that can return with a NULL pointer if the function fails, which leads to a resultant NULL pointer dereference.</Description>
+         <Extended_Description>While unchecked return value weaknesses are not limited to returns of NULL pointers (see the examples in CWE-252), functions often return NULL to indicate an error status. When this error condition is not checked, a NULL pointer dereference can occur.</Extended_Description>
+         <Related_Weaknesses>
+            <Related_Weakness Nature="StartsWith" CWE_ID="252" View_ID="709" Chain_ID="690"/>
+            <Related_Weakness Nature="ChildOf" CWE_ID="476" View_ID="1000" Ordinal="Primary"/>
+         </Related_Weaknesses>
+         <Applicable_Platforms>
+            <Language Name="C" Prevalence="Undetermined"/>
+            <Language Name="C++" Prevalence="Undetermined"/>
+         </Applicable_Platforms>
+         <Modes_Of_Introduction>
+            <Introduction>
+               <Phase>Implementation</Phase>
+               <Note>A typical occurrence of this weakness occurs when an application includes user-controlled input to a malloc() call. The related code might be correct with respect to preventing buffer overflows, but if a large value is provided, the malloc() will fail due to insufficient memory. This problem also frequently occurs when a parsing routine expects that certain elements will always be present. If malformed input is provided, the parser might return NULL. For example, strtok() can return NULL.</Note>
+            </Introduction>
+         </Modes_Of_Introduction>
+         <Common_Consequences>
+            <Consequence>
+               <Scope>Availability</Scope>
+               <Impact>DoS: Crash, Exit, or Restart</Impact>
+            </Consequence>
+            <Consequence>
+               <Scope>Integrity</Scope>
+               <Scope>Confidentiality</Scope>
+               <Scope>Availability</Scope>
+               <Impact>Execute Unauthorized Code or Commands</Impact>
+               <Impact>Read Memory</Impact>
+               <Impact>Modify Memory</Impact>
+               <Note>In rare circumstances, when NULL is equivalent to the 0x0 memory address and privileged code can access it, then writing or reading memory is possible, which may lead to code execution.</Note>
+            </Consequence>
+         </Common_Consequences>
+         <Detection_Methods>
+            <Detection_Method>
+               <Method>Black Box</Method>
+               <Description>This typically occurs in rarely-triggered error conditions, reducing the chances of detection during black box testing.</Description>
+            </Detection_Method>
+            <Detection_Method>
+               <Method>White Box</Method>
+               <Description>Code analysis can require knowledge of API behaviors for library functions that might return NULL, reducing the chances of detection when unknown libraries are used.</Description>
+            </Detection_Method>
+         </Detection_Methods>
+         <Demonstrative_Examples>
+            <Demonstrative_Example>
+               <Intro_Text>The code below makes a call to the getUserName() function but doesn't check the return value before dereferencing (which may cause a NullPointerException).</Intro_Text>
+               <Example_Code Nature="bad" Language="Java">
+                  <xhtml:div>String username = getUserName();<xhtml:br/>if (username.equals(ADMIN_USER)) {<xhtml:div style="margin-left:10px;">...</xhtml:div>}</xhtml:div>
+               </Example_Code>
+            </Demonstrative_Example>
+            <Demonstrative_Example Demonstrative_Example_ID="DX-1">
+               <Intro_Text>This example takes an IP address from a user, verifies that it is well formed and then looks up the hostname and copies it into a buffer.</Intro_Text>
+               <Example_Code Nature="bad" Language="C">
+                  <xhtml:div>void host_lookup(char *user_supplied_addr){<xhtml:div style="margin-left:10px;">
+                        <xhtml:div>struct hostent *hp;<xhtml:br/>in_addr_t *addr;<xhtml:br/>char hostname[64];<xhtml:br/>in_addr_t inet_addr(const char *cp);<xhtml:br/>
+                           <xhtml:br/>
+                           <xhtml:i>/*routine that ensures user_supplied_addr is in the right format for conversion */</xhtml:i>
+                           <xhtml:br/>
+                           <xhtml:br/>validate_addr_form(user_supplied_addr);<xhtml:br/>addr = inet_addr(user_supplied_addr);<xhtml:br/>hp = gethostbyaddr( addr, sizeof(struct in_addr), AF_INET);<xhtml:br/>strcpy(hostname, hp-&gt;h_name);</xhtml:div>
+                     </xhtml:div>}</xhtml:div>
+               </Example_Code>
+               <Body_Text>If an attacker provides an address that appears to be well-formed, but the address does not resolve to a hostname, then the call to gethostbyaddr() will return NULL. Since the code does not check the return value from gethostbyaddr (CWE-252), a NULL pointer dereference (CWE-476) would then occur in the call to strcpy().</Body_Text>
+               <Body_Text>Note that this code is also vulnerable to a buffer overflow (CWE-119).</Body_Text>
+            </Demonstrative_Example>
+         </Demonstrative_Examples>
+         <Observed_Examples>
+            <Observed_Example>
+               <Reference>CVE-2008-1052</Reference>
+               <Description>Large Content-Length value leads to NULL pointer dereference when malloc fails.</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1052</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2006-6227</Reference>
+               <Description>Large message length field leads to NULL pointer dereference when malloc fails.</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6227</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2006-2555</Reference>
+               <Description>Parsing routine encounters NULL dereference when input is missing a colon separator.</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2555</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2003-1054</Reference>
+               <Description>URI parsing API sets argument to NULL when a parsing failure occurs, such as when the Referer header is missing a hostname, leading to NULL dereference.</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-1054</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2008-5183</Reference>
+               <Description>chain: unchecked return value can lead to NULL dereference</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5183</Link>
+            </Observed_Example>
+         </Observed_Examples>
+         <Taxonomy_Mappings>
+            <Taxonomy_Mapping Taxonomy_Name="CERT C Secure Coding">
+               <Entry_ID>EXP34-C</Entry_ID>
+               <Entry_Name>Do not dereference null pointers</Entry_Name>
+               <Mapping_Fit>CWE More Specific</Mapping_Fit>
+            </Taxonomy_Mapping>
+            <Taxonomy_Mapping Taxonomy_Name="The CERT Oracle Secure Coding Standard for Java (2011)">
+               <Entry_ID>ERR08-J</Entry_ID>
+               <Entry_Name>Do not catch NullPointerException or any of its ancestors</Entry_Name>
+            </Taxonomy_Mapping>
+            <Taxonomy_Mapping Taxonomy_Name="SEI CERT Perl Coding Standard">
+               <Entry_ID>EXP32-PL</Entry_ID>
+               <Entry_Name>Do not ignore function return values</Entry_Name>
+               <Mapping_Fit>CWE More Specific</Mapping_Fit>
+            </Taxonomy_Mapping>
+         </Taxonomy_Mappings>
+         <Content_History>
+            <Submission>
+                <Submission_Name>CWE Content Team</Submission_Name>
+				<Submission_Organization>MITRE</Submission_Organization>
+                <Submission_Date>2008-04-11</Submission_Date>
+            </Submission>
+            <Modification>
+               <Modification_Name>Sean Eidemiller</Modification_Name>
+               <Modification_Organization>Cigital</Modification_Organization>
+               <Modification_Date>2008-07-01</Modification_Date>
+               <Modification_Comment>added/updated demonstrative examples</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>Eric Dalci</Modification_Name>
+               <Modification_Organization>Cigital</Modification_Organization>
+               <Modification_Date>2008-07-01</Modification_Date>
+               <Modification_Comment>updated Time_of_Introduction</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2008-09-08</Modification_Date>
+               <Modification_Comment>updated Applicable_Platforms, Description, Detection_Factors, Relationships, Other_Notes</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2009-12-28</Modification_Date>
+               <Modification_Comment>updated Demonstrative_Examples</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2010-09-27</Modification_Date>
+               <Modification_Comment>updated Observed_Examples</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2011-06-01</Modification_Date>
+               <Modification_Comment>updated Common_Consequences, Relationships, Taxonomy_Mappings</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2011-09-13</Modification_Date>
+               <Modification_Comment>updated Relationships, Taxonomy_Mappings</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2014-06-23</Modification_Date>
+               <Modification_Comment>updated Modes_of_Introduction, Other_Notes</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2017-01-19</Modification_Date>
+               <Modification_Comment>updated Relationships</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2017-11-08</Modification_Date>
+               <Modification_Comment>updated Relationships, Relevant_Properties, Taxonomy_Mappings, Time_of_Introduction</Modification_Comment>
+            </Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2019-01-03</Modification_Date>
+					<Modification_Comment>updated Relationships, Taxonomy_Mappings</Modification_Comment>
+				</Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2020-06-25</Modification_Date>
+					<Modification_Comment>updated Common_Consequences</Modification_Comment>
+				</Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2021-03-15</Modification_Date>
+					<Modification_Comment>updated Demonstrative_Examples, Relationships</Modification_Comment>
+				</Modification>
+         </Content_History>
+      </Weakness>
+      <Weakness ID="692" Name="Incomplete Denylist to Cross-Site Scripting" Abstraction="Compound" Structure="Chain" Status="Draft">
+         <Description>The product uses a denylist-based protection mechanism to defend against XSS attacks, but the denylist is incomplete, allowing XSS variants to succeed.</Description>
+         <Extended_Description>While XSS might seem simple to prevent, web browsers vary so widely in how they parse web pages, that a denylist cannot keep track of all the variations. The "XSS Cheat Sheet" [REF-714] contains a large number of attacks that are intended to bypass incomplete denylists.</Extended_Description>
+         <Related_Weaknesses>
+            <Related_Weakness Nature="StartsWith" CWE_ID="184" View_ID="709" Chain_ID="692"/>
+            <Related_Weakness Nature="ChildOf" CWE_ID="79" View_ID="1000" Ordinal="Primary"/>
+         </Related_Weaknesses>
+         <Applicable_Platforms>
+            <Language Class="Language-Independent" Prevalence="Undetermined"/>
+         </Applicable_Platforms>
+         <Common_Consequences>
+            <Consequence>
+               <Scope>Confidentiality</Scope>
+               <Scope>Integrity</Scope>
+               <Scope>Availability</Scope>
+               <Impact>Execute Unauthorized Code or Commands</Impact>
+            </Consequence>
+         </Common_Consequences>
+         <Observed_Examples>
+            <Observed_Example>
+               <Reference>CVE-2007-5727</Reference>
+               <Description>Denylist only removes &lt;SCRIPT&gt; tag.</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5727</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2006-3617</Reference>
+               <Description>Denylist only removes &lt;SCRIPT&gt; tag.</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3617</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2006-4308</Reference>
+               <Description>Denylist only checks "javascript:" tag</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4308</Link>
+            </Observed_Example>
+         </Observed_Examples>
+         <Related_Attack_Patterns>
+            <Related_Attack_Pattern CAPEC_ID="120"/>
+            <Related_Attack_Pattern CAPEC_ID="267"/>
+            <Related_Attack_Pattern CAPEC_ID="71"/>
+            <Related_Attack_Pattern CAPEC_ID="80"/>
+            <Related_Attack_Pattern CAPEC_ID="85"/>
+         </Related_Attack_Patterns>
+         <References>
+            <Reference External_Reference_ID="REF-714"/>
+         </References>
+         <Content_History>
+            <Submission>
+                <Submission_Name>CWE Content Team</Submission_Name>
+				<Submission_Organization>MITRE</Submission_Organization>
+                <Submission_Date>2008-04-11</Submission_Date>
+            </Submission>
+            <Modification>
+               <Modification_Name>Eric Dalci</Modification_Name>
+               <Modification_Organization>Cigital</Modification_Organization>
+               <Modification_Date>2008-07-01</Modification_Date>
+               <Modification_Comment>updated Time_of_Introduction</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2008-09-08</Modification_Date>
+               <Modification_Comment>updated Applicable_Platforms, Relationships, Other_Notes</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2008-09-24</Modification_Date>
+               <Modification_Comment>added Language_Class "All"</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2008-10-14</Modification_Date>
+               <Modification_Comment>updated Applicable_Platforms</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2009-03-10</Modification_Date>
+               <Modification_Comment>updated Related_Attack_Patterns</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2011-06-01</Modification_Date>
+               <Modification_Comment>updated Common_Consequences</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2012-05-11</Modification_Date>
+               <Modification_Comment>updated Related_Attack_Patterns</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2014-06-23</Modification_Date>
+               <Modification_Comment>updated Applicable_Platforms, Description, Other_Notes</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2017-01-19</Modification_Date>
+               <Modification_Comment>updated Relationships</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2017-05-03</Modification_Date>
+               <Modification_Comment>updated Related_Attack_Patterns</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2017-11-08</Modification_Date>
+               <Modification_Comment>updated Relationships, Relevant_Properties</Modification_Comment>
+            </Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2019-01-03</Modification_Date>
+					<Modification_Comment>updated Related_Attack_Patterns</Modification_Comment>
+				</Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2020-06-25</Modification_Date>
+					<Modification_Comment>updated Description, Name, Observed_Examples, References</Modification_Comment>
+				</Modification>
+			<Previous_Entry_Name Date="2020-02-26">Incomplete Blacklist to Cross-Site Scripting</Previous_Entry_Name>
+         </Content_History>
+      </Weakness>
+   </Weaknesses>
+   <Categories>
+   </Categories>
+   <Views>
+      <View ID="709" Name="Named Chains" Type="Implicit" Status="Incomplete">
+         <Objective>This view displays Named Chains and their components.</Objective>
+         <Filter>/Weakness_Catalog/Weaknesses/Weakness[@Structure='Chain']</Filter>
+         <Content_History>
+            <Submission>
+               <Submission_Name>CWE Content Team</Submission_Name>
+               <Submission_Organization>MITRE</Submission_Organization>
+               <Submission_Date>2008-09-09</Submission_Date>
+            </Submission>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2017-11-08</Modification_Date>
+               <Modification_Comment>updated Description, View_Structure</Modification_Comment>
+            </Modification>
+         </Content_History>
+      </View>
+   </Views>
+   <External_References>
+      <External_Reference Reference_ID="REF-714">
+			<Author>RSnake</Author>
+			<Title>XSS (Cross Site Scripting) Cheat Sheet</Title>
+			<URL>http://ha.ckers.org/xss.html</URL>
+		</External_Reference>
+   </External_References>
+</Weakness_Catalog>

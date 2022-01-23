@@ -1,0 +1,1189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Weakness_Catalog xmlns="http://cwe.mitre.org/cwe-6" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="VIEW LIST: CWE-678: Composites" Version="4.6" Date="2021-10-28" xsi:schemaLocation="http://cwe.mitre.org/cwe-6 http://cwe.mitre.org/data/xsd/cwe_schema_v6.6.xsd">
+   <Weaknesses>
+      <Weakness ID="352" Name="Cross-Site Request Forgery (CSRF)" Abstraction="Compound" Structure="Composite" Status="Stable">
+         <Description>The web application does not, or can not, sufficiently verify whether a well-formed, valid, consistent request was intentionally provided by the user who submitted the request.</Description>
+         <Extended_Description>When a web server is designed to receive a request from a client without any mechanism for verifying that it was intentionally sent, then it might be possible for an attacker to trick a client into making an unintentional request to the web server which will be treated as an authentic request. This can be done via a URL, image load, XMLHttpRequest, etc. and can result in exposure of data or unintended code execution.</Extended_Description>
+         <Related_Weaknesses>
+            <Related_Weakness Nature="ChildOf" CWE_ID="345" View_ID="1000" Ordinal="Primary"/>
+            <Related_Weakness Nature="ChildOf" CWE_ID="345" View_ID="1003" Ordinal="Primary"/>
+            <Related_Weakness Nature="Requires" CWE_ID="346" View_ID="1000"/>
+            <Related_Weakness Nature="Requires" CWE_ID="441" View_ID="1000"/>
+            <Related_Weakness Nature="Requires" CWE_ID="642" View_ID="1000"/>
+            <Related_Weakness Nature="Requires" CWE_ID="613" View_ID="1000"/>
+         </Related_Weaknesses>
+         <Applicable_Platforms>
+            <Language Class="Language-Independent" Prevalence="Undetermined"/>
+            <Technology Name="Web Server" Prevalence="Undetermined"/>
+         </Applicable_Platforms>
+         <Alternate_Terms>
+            <Alternate_Term>
+               <Term>Session Riding</Term>
+            </Alternate_Term>
+            <Alternate_Term>
+               <Term>Cross Site Reference Forgery</Term>
+            </Alternate_Term>
+            <Alternate_Term>
+               <Term>XSRF</Term>
+            </Alternate_Term>
+         </Alternate_Terms>
+         <Modes_Of_Introduction>
+            <Introduction>
+               <Phase>Architecture and Design</Phase>
+               <Note>REALIZATION: This weakness is caused during implementation of an architectural security tactic.</Note>
+            </Introduction>
+         </Modes_Of_Introduction>
+         <Likelihood_Of_Exploit>Medium</Likelihood_Of_Exploit>
+         <Common_Consequences>
+            <Consequence>
+               <Scope>Confidentiality</Scope>
+               <Scope>Integrity</Scope>
+               <Scope>Availability</Scope>
+               <Scope>Non-Repudiation</Scope>
+               <Scope>Access Control</Scope>
+               <Impact>Gain Privileges or Assume Identity</Impact>
+               <Impact>Bypass Protection Mechanism</Impact>
+               <Impact>Read Application Data</Impact>
+               <Impact>Modify Application Data</Impact>
+               <Impact>DoS: Crash, Exit, or Restart</Impact>
+               <Note>The consequences will vary depending on the nature of the functionality that is vulnerable to CSRF. An attacker could effectively perform any operations as the victim. If the victim is an administrator or privileged user, the consequences may include obtaining complete control over the web application - deleting or stealing data, uninstalling the product, or using it to launch other attacks against all of the product's users. Because the attacker has the identity of the victim, the scope of CSRF is limited only by the victim's privileges.</Note>
+            </Consequence>
+         </Common_Consequences>
+         <Detection_Methods>
+            <Detection_Method Detection_Method_ID="DM-7">
+               <Method>Manual Analysis</Method>
+               <Description>
+                  <xhtml:p>This weakness can be detected using tools and techniques that require manual (human) analysis, such as penetration testing, threat modeling, and interactive tools that allow the tester to record and modify an active session.</xhtml:p>
+                  <xhtml:p>Specifically, manual analysis can be useful for finding this weakness, and for minimizing false positives assuming an understanding of business logic. However, it might not achieve desired code coverage within limited time constraints. For black-box analysis, if credentials are not known for privileged accounts, then the most security-critical portions of the application may not receive sufficient attention.</xhtml:p>
+                  <xhtml:p>Consider using OWASP CSRFTester to identify potential issues and aid in manual analysis.</xhtml:p>
+               </Description>
+               <Effectiveness>High</Effectiveness>
+               <Effectiveness_Notes>These may be more effective than strictly automated techniques. This is especially the case with weaknesses that are related to design and business rules.</Effectiveness_Notes>
+            </Detection_Method>
+            <Detection_Method>
+               <Method>Automated Static Analysis</Method>
+               <Description>CSRF is currently difficult to detect reliably using automated techniques. This is because each application has its own implicit security policy that dictates which requests can be influenced by an outsider and automatically performed on behalf of a user, versus which requests require strong confidence that the user intends to make the request. For example, a keyword search of the public portion of a web site is typically expected to be encoded within a link that can be launched automatically when the user clicks on the link.</Description>
+               <Effectiveness>Limited</Effectiveness>
+            </Detection_Method>
+            <Detection_Method>
+               <Method>Automated Static Analysis - Binary or Bytecode</Method>
+               <Description>
+                  <xhtml:p>According to SOAR, the following detection techniques may be useful:</xhtml:p>
+                  <xhtml:div style="margin-left:10px;">
+                     <xhtml:div>Cost effective for partial coverage:</xhtml:div>
+                     <xhtml:div style="margin-left:10px;">
+                        <xhtml:ul>
+                           <xhtml:li>Bytecode Weakness Analysis - including disassembler + source code weakness analysis</xhtml:li>
+                           <xhtml:li>Binary Weakness Analysis - including disassembler + source code weakness analysis</xhtml:li>
+                        </xhtml:ul>
+                     </xhtml:div>
+                  </xhtml:div>
+               </Description>
+               <Effectiveness>SOAR Partial</Effectiveness>
+            </Detection_Method>
+            <Detection_Method>
+               <Method>Manual Static Analysis - Binary or Bytecode</Method>
+               <Description>
+                  <xhtml:p>According to SOAR, the following detection techniques may be useful:</xhtml:p>
+                  <xhtml:div style="margin-left:10px;">
+                     <xhtml:div>Cost effective for partial coverage:</xhtml:div>
+                     <xhtml:div style="margin-left:10px;">
+                        <xhtml:ul>
+                           <xhtml:li>Binary / Bytecode disassembler - then use manual analysis for vulnerabilities &amp; anomalies</xhtml:li>
+                        </xhtml:ul>
+                     </xhtml:div>
+                  </xhtml:div>
+               </Description>
+               <Effectiveness>SOAR Partial</Effectiveness>
+            </Detection_Method>
+            <Detection_Method>
+               <Method>Dynamic Analysis with Automated Results Interpretation</Method>
+               <Description>
+                  <xhtml:p>According to SOAR, the following detection techniques may be useful:</xhtml:p>
+                  <xhtml:div style="margin-left:10px;">
+                     <xhtml:div>Highly cost effective:</xhtml:div>
+                     <xhtml:div style="margin-left:10px;">
+                        <xhtml:ul>
+                           <xhtml:li>Web Application Scanner</xhtml:li>
+                        </xhtml:ul>
+                     </xhtml:div>
+                  </xhtml:div>
+               </Description>
+               <Effectiveness>High</Effectiveness>
+            </Detection_Method>
+            <Detection_Method>
+               <Method>Dynamic Analysis with Manual Results Interpretation</Method>
+               <Description>
+                  <xhtml:p>According to SOAR, the following detection techniques may be useful:</xhtml:p>
+                  <xhtml:div style="margin-left:10px;">
+                     <xhtml:div>Highly cost effective:</xhtml:div>
+                     <xhtml:div style="margin-left:10px;">
+                        <xhtml:ul>
+                           <xhtml:li>Fuzz Tester</xhtml:li>
+                           <xhtml:li>Framework-based Fuzzer</xhtml:li>
+                        </xhtml:ul>
+                     </xhtml:div>
+                  </xhtml:div>
+               </Description>
+               <Effectiveness>High</Effectiveness>
+            </Detection_Method>
+            <Detection_Method>
+               <Method>Manual Static Analysis - Source Code</Method>
+               <Description>
+                  <xhtml:p>According to SOAR, the following detection techniques may be useful:</xhtml:p>
+                  <xhtml:div style="margin-left:10px;">
+                     <xhtml:div>Cost effective for partial coverage:</xhtml:div>
+                     <xhtml:div style="margin-left:10px;">
+                        <xhtml:ul>
+                           <xhtml:li>Focused Manual Spotcheck - Focused manual analysis of source</xhtml:li>
+                           <xhtml:li>Manual Source Code Review (not inspections)</xhtml:li>
+                        </xhtml:ul>
+                     </xhtml:div>
+                  </xhtml:div>
+               </Description>
+               <Effectiveness>SOAR Partial</Effectiveness>
+            </Detection_Method>
+            <Detection_Method>
+               <Method>Automated Static Analysis - Source Code</Method>
+               <Description>
+                  <xhtml:p>According to SOAR, the following detection techniques may be useful:</xhtml:p>
+                  <xhtml:div style="margin-left:10px;">
+                     <xhtml:div>Cost effective for partial coverage:</xhtml:div>
+                     <xhtml:div style="margin-left:10px;">
+                        <xhtml:ul>
+                           <xhtml:li>Source code Weakness Analyzer</xhtml:li>
+                           <xhtml:li>Context-configured Source Code Weakness Analyzer</xhtml:li>
+                        </xhtml:ul>
+                     </xhtml:div>
+                  </xhtml:div>
+               </Description>
+               <Effectiveness>SOAR Partial</Effectiveness>
+            </Detection_Method>
+            <Detection_Method>
+               <Method>Architecture or Design Review</Method>
+               <Description>
+                  <xhtml:p>According to SOAR, the following detection techniques may be useful:</xhtml:p>
+                  <xhtml:div style="margin-left:10px;">
+                     <xhtml:div>Cost effective for partial coverage:</xhtml:div>
+                     <xhtml:div style="margin-left:10px;">
+                        <xhtml:ul>
+                           <xhtml:li>Inspection (IEEE 1028 standard) (can apply to requirements, design, source code, etc.)</xhtml:li>
+                           <xhtml:li>Formal Methods / Correct-By-Construction</xhtml:li>
+                        </xhtml:ul>
+                     </xhtml:div>
+                  </xhtml:div>
+               </Description>
+               <Effectiveness>SOAR Partial</Effectiveness>
+            </Detection_Method>
+         </Detection_Methods>
+         <Potential_Mitigations>
+            <Mitigation Mitigation_ID="MIT-4">
+               <Phase>Architecture and Design</Phase>
+               <Strategy>Libraries or Frameworks</Strategy>
+               <Description>
+                  <xhtml:p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</xhtml:p>
+                  <xhtml:p>For example, use anti-CSRF packages such as the OWASP CSRFGuard. [REF-330]</xhtml:p>
+                  <xhtml:p>Another example is the ESAPI Session Management control, which includes a component for CSRF. [REF-45]</xhtml:p>
+               </Description>
+            </Mitigation>
+            <Mitigation>
+               <Phase>Implementation</Phase>
+               <Description>Ensure that the application is free of cross-site scripting issues (CWE-79), because most CSRF defenses can be bypassed using attacker-controlled script.</Description>
+            </Mitigation>
+            <Mitigation>
+               <Phase>Architecture and Design</Phase>
+               <Description>Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330). [REF-332]</Description>
+               <Effectiveness_Notes>Note that this can be bypassed using XSS (CWE-79).</Effectiveness_Notes>
+            </Mitigation>
+            <Mitigation>
+               <Phase>Architecture and Design</Phase>
+               <Description>Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.</Description>
+               <Effectiveness_Notes>Note that this can be bypassed using XSS (CWE-79).</Effectiveness_Notes>
+            </Mitigation>
+            <Mitigation>
+               <Phase>Architecture and Design</Phase>
+               <Description>
+                  <xhtml:p>Use the "double-submitted cookie" method as described by Felten and Zeller:</xhtml:p>
+                  <xhtml:p>When a user visits a site, the site should generate a pseudorandom value and set it as a cookie on the user's machine. The site should require every form submission to include this value as a form value and also as a cookie value. When a POST request is sent to the site, the request should only be considered valid if the form value and the cookie value are the same.</xhtml:p>
+                  <xhtml:p>Because of the same-origin policy, an attacker cannot read or modify the value stored in the cookie. To successfully submit a form on behalf of the user, the attacker would have to correctly guess the pseudorandom value. If the pseudorandom value is cryptographically strong, this will be prohibitively difficult.</xhtml:p>
+                  <xhtml:p>This technique requires Javascript, so it may not work for browsers that have Javascript disabled. [REF-331]</xhtml:p>
+               </Description>
+               <Effectiveness_Notes>Note that this can probably be bypassed using XSS (CWE-79), or when using web technologies that enable the attacker to read raw headers from HTTP requests.</Effectiveness_Notes>
+            </Mitigation>
+            <Mitigation>
+               <Phase>Architecture and Design</Phase>
+               <Description>Do not use the GET method for any request that triggers a state change.</Description>
+            </Mitigation>
+            <Mitigation>
+               <Phase>Implementation</Phase>
+               <Description>Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.</Description>
+               <Effectiveness_Notes>Note that this can be bypassed using XSS (CWE-79). An attacker could use XSS to generate a spoofed Referer, or to generate a malicious request from a page whose Referer would be allowed.</Effectiveness_Notes>
+            </Mitigation>
+         </Potential_Mitigations>
+         <Demonstrative_Examples>
+            <Demonstrative_Example>
+               <Intro_Text>This example PHP code attempts to secure the form submission process by validating that the user submitting the form has a valid session. A CSRF attack would not be prevented by this countermeasure because the attacker forges a request through the user's web browser in which a valid session already exists.</Intro_Text>
+               <Body_Text>The following HTML is intended to allow a user to update a profile.</Body_Text>
+               <Example_Code Nature="bad" Language="HTML">
+                  <xhtml:div>&lt;form action="/url/profile.php" method="post"&gt;<xhtml:br/>&lt;input type="text" name="firstname"/&gt;<xhtml:br/>&lt;input type="text" name="lastname"/&gt;<xhtml:br/>&lt;br/&gt;<xhtml:br/>&lt;input type="text" name="email"/&gt;<xhtml:br/>&lt;input type="submit" name="submit" value="Update"/&gt;<xhtml:br/>&lt;/form&gt;</xhtml:div>
+               </Example_Code>
+               <Body_Text>profile.php contains the following code.</Body_Text>
+               <Example_Code Nature="bad" Language="PHP">
+                  <xhtml:div>// initiate the session in order to validate sessions<xhtml:br/>
+                     <xhtml:br/>session_start();<xhtml:br/>
+                     <xhtml:br/>
+                     <xhtml:i>//if the session is registered to a valid user then allow update</xhtml:i>
+                     <xhtml:br/>
+                     <xhtml:br/>if (! session_is_registered("username")) {<xhtml:div style="margin-left:10px;">
+                        <xhtml:div>
+                           <xhtml:br/>echo "invalid session detected!";<xhtml:br/>
+                           <xhtml:br/>
+                           <xhtml:i>// Redirect user to login page</xhtml:i>
+                           <xhtml:br/>[...]<xhtml:br/>
+                           <xhtml:br/>exit;</xhtml:div>
+                     </xhtml:div>}<xhtml:br/>
+                     <xhtml:br/>
+                     <xhtml:i>// The user session is valid, so process the request</xhtml:i>
+                     <xhtml:br/>
+                     <xhtml:br/>
+                     <xhtml:i>// and update the information</xhtml:i>
+                     <xhtml:br/>
+                     <xhtml:br/>update_profile();<xhtml:br/>
+                     <xhtml:br/>function update_profile {<xhtml:div style="margin-left:10px;">
+                        <xhtml:div>
+                           <xhtml:br/>
+                           <xhtml:i>// read in the data from $POST and send an update</xhtml:i>
+                           <xhtml:br/>
+                           <xhtml:br/>
+                           <xhtml:i>// to the database</xhtml:i>
+                           <xhtml:br/>SendUpdateToDatabase($_SESSION['username'], $_POST['email']);<xhtml:br/>[...]<xhtml:br/>echo "Your profile has been successfully updated.";</xhtml:div>
+                     </xhtml:div>}</xhtml:div>
+               </Example_Code>
+               <Body_Text>This code may look protected since it checks for a valid session. However, CSRF attacks can be staged from virtually any tag or HTML construct, including image tags, links, embed or object tags, or other attributes that load background images.</Body_Text>
+               <Body_Text>The attacker can then host code that will silently change the username and email address of any user that visits the page while remaining logged in to the target web application. The code might be an innocent-looking web page such as:</Body_Text>
+               <Example_Code Nature="attack" Language="HTML">
+                  <xhtml:div>&lt;SCRIPT&gt;<xhtml:br/>function SendAttack () {<xhtml:div style="margin-left:10px;">form.email = "attacker@example.com";<xhtml:br/>
+                        <xhtml:i>// send to profile.php</xhtml:i>
+                        <xhtml:br/>form.submit();</xhtml:div>}<xhtml:br/>&lt;/SCRIPT&gt;<xhtml:br/>
+                     <xhtml:br/>&lt;BODY onload="javascript:SendAttack();"&gt;<xhtml:br/>
+                     <xhtml:br/>&lt;form action="http://victim.example.com/profile.php" id="form" method="post"&gt;<xhtml:br/>&lt;input type="hidden" name="firstname" value="Funny"&gt;<xhtml:br/>&lt;input type="hidden" name="lastname" value="Joke"&gt;<xhtml:br/>&lt;br/&gt;<xhtml:br/>&lt;input type="hidden" name="email"&gt;<xhtml:br/>&lt;/form&gt;</xhtml:div>
+               </Example_Code>
+               <Body_Text>Notice how the form contains hidden fields, so when it is loaded into the browser, the user will not notice it. Because SendAttack() is defined in the body's onload attribute, it will be automatically called when the victim loads the web page.</Body_Text>
+               <Body_Text>Assuming that the user is already logged in to victim.example.com, profile.php will see that a valid user session has been established, then update the email address to the attacker's own address. At this stage, the user's identity has been compromised, and messages sent through this profile could be sent to the attacker's address.</Body_Text>
+            </Demonstrative_Example>
+         </Demonstrative_Examples>
+         <Observed_Examples>
+            <Observed_Example>
+               <Reference>CVE-2004-1703</Reference>
+               <Description>Add user accounts via a URL in an img tag</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1703</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2004-1995</Reference>
+               <Description>Add user accounts via a URL in an img tag</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1995</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2004-1967</Reference>
+               <Description>Arbitrary code execution by specifying the code in a crafted img tag or URL</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1967</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2004-1842</Reference>
+               <Description>Gain administrative privileges via a URL in an img tag</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1842</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2005-1947</Reference>
+               <Description>Delete a victim's information via a URL or an img tag</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1947</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2005-2059</Reference>
+               <Description>Change another user's settings via a URL or an img tag</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2059</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2005-1674</Reference>
+               <Description>Perform actions as administrator via a URL or an img tag</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1674</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2009-3520</Reference>
+               <Description>modify password for the administrator</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3520</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2009-3022</Reference>
+               <Description>CMS allows modification of configuration via CSRF attack against the administrator</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3022</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2009-3759</Reference>
+               <Description>web interface allows password changes or stopping a virtual machine via CSRF</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3759</Link>
+            </Observed_Example>
+         </Observed_Examples>
+         <Taxonomy_Mappings>
+            <Taxonomy_Mapping Taxonomy_Name="PLOVER">
+               <Entry_Name>Cross-Site Request Forgery (CSRF)</Entry_Name>
+            </Taxonomy_Mapping>
+            <Taxonomy_Mapping Taxonomy_Name="OWASP Top Ten 2007">
+               <Entry_ID>A5</Entry_ID>
+               <Entry_Name>Cross Site Request Forgery (CSRF)</Entry_Name>
+               <Mapping_Fit>Exact</Mapping_Fit>
+            </Taxonomy_Mapping>
+            <Taxonomy_Mapping Taxonomy_Name="WASC">
+               <Entry_ID>9</Entry_ID>
+               <Entry_Name>Cross-site Request Forgery</Entry_Name>
+            </Taxonomy_Mapping>
+         </Taxonomy_Mappings>
+         <Related_Attack_Patterns>
+            <Related_Attack_Pattern CAPEC_ID="111"/>
+            <Related_Attack_Pattern CAPEC_ID="462"/>
+            <Related_Attack_Pattern CAPEC_ID="467"/>
+            <Related_Attack_Pattern CAPEC_ID="62"/>
+         </Related_Attack_Patterns>
+         <References>
+            <Reference External_Reference_ID="REF-44" Section="&#34;Sin 2: Web-Server Related Vulnerabilities (XSS, XSRF, and&#xA; Response Splitting).&#34; Page 37"/>
+            <Reference External_Reference_ID="REF-329"/>
+            <Reference External_Reference_ID="REF-330"/>
+            <Reference External_Reference_ID="REF-331"/>
+            <Reference External_Reference_ID="REF-332"/>
+            <Reference External_Reference_ID="REF-333"/>
+            <Reference External_Reference_ID="REF-334"/>
+            <Reference External_Reference_ID="REF-335"/>
+            <Reference External_Reference_ID="REF-45"/>
+            <Reference External_Reference_ID="REF-956"/>
+         </References>
+         <Notes>
+            <Note Type="Relationship">
+               <xhtml:p>There can be a close relationship between XSS and CSRF (CWE-352).  An attacker might use CSRF in order to trick the victim into submitting requests to the server in which the requests contain an XSS payload.  A well-known example of this was the Samy worm on MySpace [REF-956]. The worm used XSS to insert malicious HTML sequences into a user's profile and add the attacker as a MySpace friend.  MySpace friends of that victim would then execute the payload to modify their own profiles, causing the worm to propagate exponentially. Since the victims did not intentionally insert the malicious script themselves, CSRF was a root cause.</xhtml:p>
+            </Note>
+            <Note Type="Theoretical">
+               <xhtml:p>The CSRF topology is multi-channel:</xhtml:p>
+               <xhtml:ol>
+                  <xhtml:li>Attacker (as outsider) to intermediary (as user). The interaction point is either an external or internal channel.</xhtml:li>
+                  <xhtml:li>Intermediary (as user) to server (as victim). The activation point is an internal channel.</xhtml:li>
+               </xhtml:ol>
+            </Note>
+         </Notes>
+         <Content_History>
+            <Submission>
+               <Submission_Name>PLOVER</Submission_Name>
+               <Submission_Date>2006-07-19</Submission_Date>
+            </Submission>
+            <Modification>
+               <Modification_Name>Eric Dalci</Modification_Name>
+               <Modification_Organization>Cigital</Modification_Organization>
+               <Modification_Date>2008-07-01</Modification_Date>
+               <Modification_Comment>updated Time_of_Introduction</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2008-09-08</Modification_Date>
+               <Modification_Comment>updated Alternate_Terms, Description, Relationships, Other_Notes, Relationship_Notes, Taxonomy_Mappings</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2009-01-12</Modification_Date>
+               <Modification_Comment>updated Applicable_Platforms, Description, Likelihood_of_Exploit, Observed_Examples, Other_Notes, Potential_Mitigations, References, Relationship_Notes, Relationships, Research_Gaps, Theoretical_Notes</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2009-03-10</Modification_Date>
+               <Modification_Comment>updated Potential_Mitigations</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>Tom Stracener</Modification_Name>
+               <Modification_Date>2009-05-20</Modification_Date>
+               <Modification_Comment>Added demonstrative example for profile.</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2009-05-27</Modification_Date>
+               <Modification_Comment>updated Demonstrative_Examples, Related_Attack_Patterns</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2009-12-28</Modification_Date>
+               <Modification_Comment>updated Common_Consequences, Demonstrative_Examples, Detection_Factors, Likelihood_of_Exploit, Observed_Examples, Potential_Mitigations, Time_of_Introduction</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2010-02-16</Modification_Date>
+               <Modification_Comment>updated Applicable_Platforms, Detection_Factors, References, Relationships, Taxonomy_Mappings</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2010-06-21</Modification_Date>
+               <Modification_Comment>updated Common_Consequences, Detection_Factors, Potential_Mitigations, References, Relationships</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2010-09-27</Modification_Date>
+               <Modification_Comment>updated Potential_Mitigations</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2011-03-29</Modification_Date>
+               <Modification_Comment>updated Description</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2011-06-01</Modification_Date>
+               <Modification_Comment>updated Common_Consequences</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2011-06-27</Modification_Date>
+               <Modification_Comment>updated Relationships</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2011-09-13</Modification_Date>
+               <Modification_Comment>updated Potential_Mitigations, References</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2012-05-11</Modification_Date>
+               <Modification_Comment>updated Related_Attack_Patterns, Relationships</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2012-10-30</Modification_Date>
+               <Modification_Comment>updated Potential_Mitigations</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2013-02-21</Modification_Date>
+               <Modification_Comment>updated Relationships</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2013-07-17</Modification_Date>
+               <Modification_Comment>updated References, Relationships</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2014-07-30</Modification_Date>
+               <Modification_Comment>updated Detection_Factors</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2015-12-07</Modification_Date>
+               <Modification_Comment>updated Relationships</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2017-11-08</Modification_Date>
+               <Modification_Comment>updated Applicable_Platforms, Likelihood_of_Exploit, Modes_of_Introduction, References, Relationships</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2018-03-27</Modification_Date>
+               <Modification_Comment>updated References, Relationship_Notes, Research_Gaps</Modification_Comment>
+            </Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2019-09-19</Modification_Date>
+					<Modification_Comment>updated Relationships</Modification_Comment>
+				</Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2020-02-24</Modification_Date>
+					<Modification_Comment>updated Relationships</Modification_Comment>
+				</Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2020-06-25</Modification_Date>
+					<Modification_Comment>updated Relationships, Theoretical_Notes</Modification_Comment>
+				</Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2020-08-20</Modification_Date>
+					<Modification_Comment>updated Relationships</Modification_Comment>
+				</Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2021-07-20</Modification_Date>
+					<Modification_Comment>updated Relationships</Modification_Comment>
+				</Modification>
+         </Content_History>
+      </Weakness>
+      <Weakness ID="384" Name="Session Fixation" Abstraction="Compound" Structure="Composite" Status="Incomplete">
+         <Description>Authenticating a user, or otherwise establishing a new user session, without invalidating any existing session identifier gives an attacker the opportunity to steal authenticated sessions.</Description>
+         <Extended_Description>
+            <xhtml:p>Such a scenario is commonly observed when:</xhtml:p>
+            <xhtml:ol>
+               <xhtml:li>A web application authenticates a user without first invalidating the existing session, thereby continuing to use the session already associated with the user.</xhtml:li>
+               <xhtml:li>An attacker is able to force a known session identifier on a user so that, once the user authenticates, the attacker has access to the authenticated session.</xhtml:li>
+               <xhtml:li>The application or container uses predictable session identifiers. In the generic exploit of session fixation vulnerabilities, an attacker creates a new session on a web application and records the associated session identifier. The attacker then causes the victim to associate, and possibly authenticate, against the server using that session identifier, giving the attacker access to the user's account through the active session.</xhtml:li>
+            </xhtml:ol>
+         </Extended_Description>
+         <Related_Weaknesses>
+            <Related_Weakness Nature="ChildOf" CWE_ID="610" View_ID="1000" Ordinal="Primary"/>
+            <Related_Weakness Nature="ChildOf" CWE_ID="610" View_ID="1003" Ordinal="Primary"/>
+            <Related_Weakness Nature="Requires" CWE_ID="346" View_ID="1000"/>
+            <Related_Weakness Nature="Requires" CWE_ID="472" View_ID="1000"/>
+            <Related_Weakness Nature="Requires" CWE_ID="441" View_ID="1000"/>
+         </Related_Weaknesses>
+         <Applicable_Platforms>
+            <Language Class="Language-Independent" Prevalence="Undetermined"/>
+         </Applicable_Platforms>
+         <Modes_Of_Introduction>
+            <Introduction>
+               <Phase>Architecture and Design</Phase>
+            </Introduction>
+            <Introduction>
+               <Phase>Implementation</Phase>
+            </Introduction>
+         </Modes_Of_Introduction>
+         <Common_Consequences>
+            <Consequence>
+               <Scope>Access Control</Scope>
+               <Impact>Gain Privileges or Assume Identity</Impact>
+            </Consequence>
+         </Common_Consequences>
+         <Potential_Mitigations>
+            <Mitigation>
+               <Phase>Architecture and Design</Phase>
+               <Description>Invalidate any existing session identifiers prior to authorizing a new user session.</Description>
+            </Mitigation>
+            <Mitigation>
+               <Phase>Architecture and Design</Phase>
+               <Description>For platforms such as ASP that do not generate new values for sessionid cookies, utilize a secondary cookie. In this approach, set a secondary cookie on the user's browser to a random value and set a session variable to the same value. If the session variable and the cookie value ever don't match, invalidate the session, and force the user to log on again.</Description>
+            </Mitigation>
+         </Potential_Mitigations>
+         <Demonstrative_Examples>
+            <Demonstrative_Example>
+               <Intro_Text>The following example shows a snippet of code from a J2EE web application where the application authenticates users with LoginContext.login() without first calling HttpSession.invalidate().</Intro_Text>
+               <Example_Code Nature="bad" Language="Java">
+                  <xhtml:div>private void auth(LoginContext lc, HttpSession session) throws LoginException {<xhtml:div style="margin-left:10px;">...<xhtml:br/>lc.login();<xhtml:br/>...</xhtml:div>}</xhtml:div>
+               </Example_Code>
+               <Body_Text>In order to exploit the code above, an attacker could first create a session (perhaps by logging into the application) from a public terminal, record the session identifier assigned by the application, and reset the browser to the login page. Next, a victim sits down at the same public terminal, notices the browser open to the login page of the site, and enters credentials to authenticate against the application. The code responsible for authenticating the victim continues to use the pre-existing session identifier, now the attacker simply uses the session identifier recorded earlier to access the victim's active session, providing nearly unrestricted access to the victim's account for the lifetime of the session. Even given a vulnerable application, the success of the specific attack described here is dependent on several factors working in the favor of the attacker: access to an unmonitored public terminal, the ability to keep the compromised session active and a victim interested in logging into the vulnerable application on the public terminal.</Body_Text>
+               <Body_Text>In most circumstances, the first two challenges are surmountable given a sufficient investment of time. Finding a victim who is both using a public terminal and interested in logging into the vulnerable application is possible as well, so long as the site is reasonably popular. The less well known the site is, the lower the odds of an interested victim using the public terminal and the lower the chance of success for the attack vector described above. The biggest challenge an attacker faces in exploiting session fixation vulnerabilities is inducing victims to authenticate against the vulnerable application using a session identifier known to the attacker.</Body_Text>
+               <Body_Text>In the example above, the attacker did this through a direct method that is not subtle and does not scale suitably for attacks involving less well-known web sites. However, do not be lulled into complacency; attackers have many tools in their belts that help bypass the limitations of this attack vector. The most common technique employed by attackers involves taking advantage of cross-site scripting or HTTP response splitting vulnerabilities in the target site [12]. By tricking the victim into submitting a malicious request to a vulnerable application that reflects JavaScript or other code back to the victim's browser, an attacker can create a cookie that will cause the victim to reuse a session identifier controlled by the attacker. It is worth noting that cookies are often tied to the top level domain associated with a given URL. If multiple applications reside on the same top level domain, such as bank.example.com and recipes.example.com, a vulnerability in one application can allow an attacker to set a cookie with a fixed session identifier that will be used in all interactions with any application on the domain example.com [29].</Body_Text>
+            </Demonstrative_Example>
+            <Demonstrative_Example>
+               <Intro_Text>The following example shows a snippet of code from a J2EE web application where the application authenticates users with a direct post to the &lt;code&gt;j_security_check&lt;/code&gt;, which typically does not invalidate the existing session before processing the login request.</Intro_Text>
+               <Example_Code Nature="bad" Language="HTML">
+                  <xhtml:div>&lt;form method="POST" action="j_security_check"&gt;<xhtml:div style="margin-left:10px;">&lt;input type="text" name="j_username"&gt;<xhtml:br/>&lt;input type="text" name="j_password"&gt;</xhtml:div>&lt;/form&gt;</xhtml:div>
+               </Example_Code>
+            </Demonstrative_Example>
+         </Demonstrative_Examples>
+         <Taxonomy_Mappings>
+            <Taxonomy_Mapping Taxonomy_Name="7 Pernicious Kingdoms">
+               <Entry_Name>Session Fixation</Entry_Name>
+            </Taxonomy_Mapping>
+            <Taxonomy_Mapping Taxonomy_Name="OWASP Top Ten 2004">
+               <Entry_ID>A3</Entry_ID>
+               <Entry_Name>Broken Authentication and Session Management</Entry_Name>
+               <Mapping_Fit>CWE More Specific</Mapping_Fit>
+            </Taxonomy_Mapping>
+            <Taxonomy_Mapping Taxonomy_Name="WASC">
+               <Entry_ID>37</Entry_ID>
+               <Entry_Name>Session Fixation</Entry_Name>
+            </Taxonomy_Mapping>
+         </Taxonomy_Mappings>
+         <Related_Attack_Patterns>
+            <Related_Attack_Pattern CAPEC_ID="196"/>
+            <Related_Attack_Pattern CAPEC_ID="21"/>
+            <Related_Attack_Pattern CAPEC_ID="31"/>
+            <Related_Attack_Pattern CAPEC_ID="39"/>
+            <Related_Attack_Pattern CAPEC_ID="59"/>
+            <Related_Attack_Pattern CAPEC_ID="60"/>
+            <Related_Attack_Pattern CAPEC_ID="61"/>
+         </Related_Attack_Patterns>
+         <References>
+            <Reference External_Reference_ID="REF-6"/>
+         </References>
+         <Notes>
+            <Note Type="Other">Other attack vectors include DNS poisoning and related network based attacks where an attacker causes the user to visit a malicious site by redirecting a request for a valid site. Network based attacks typically involve a physical presence on the victim's network or control of a compromised machine on the network, which makes them harder to exploit remotely, but their significance should not be overlooked. Less secure session management mechanisms, such as the default implementation in Apache Tomcat, allow session identifiers normally expected in a cookie to be specified on the URL as well, which enables an attacker to cause a victim to use a fixed session identifier simply by emailing a malicious URL.</Note>
+         </Notes>
+         <Content_History>
+            <Submission>
+               <Submission_Name>7 Pernicious Kingdoms</Submission_Name>
+               <Submission_Date>2006-07-19</Submission_Date>
+            </Submission>
+            <Modification>
+               <Modification_Name>Eric Dalci</Modification_Name>
+               <Modification_Organization>Cigital</Modification_Organization>
+               <Modification_Date>2008-07-01</Modification_Date>
+               <Modification_Comment>updated Time_of_Introduction</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Organization>Veracode</Modification_Organization>
+               <Modification_Date>2008-08-15</Modification_Date>
+               <Modification_Comment>Suggested OWASP Top Ten 2004 mapping</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2008-09-08</Modification_Date>
+               <Modification_Comment>updated Description, Relationships, Other_Notes, Taxonomy_Mappings</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2009-07-27</Modification_Date>
+               <Modification_Comment>updated Demonstrative_Examples, Related_Attack_Patterns</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2010-02-16</Modification_Date>
+               <Modification_Comment>updated Taxonomy_Mappings</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2011-06-01</Modification_Date>
+               <Modification_Comment>updated Common_Consequences</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2012-10-30</Modification_Date>
+               <Modification_Comment>updated Potential_Mitigations</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2013-07-17</Modification_Date>
+               <Modification_Comment>updated Relationships</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2015-12-07</Modification_Date>
+               <Modification_Comment>updated Relationships</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2017-11-08</Modification_Date>
+               <Modification_Comment>updated Applicable_Platforms, Modes_of_Introduction, Relationships</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2018-03-27</Modification_Date>
+               <Modification_Comment>updated Relationships</Modification_Comment>
+            </Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2019-06-20</Modification_Date>
+					<Modification_Comment>updated Relationships</Modification_Comment>
+				</Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2020-02-24</Modification_Date>
+					<Modification_Comment>updated References, Relationships</Modification_Comment>
+				</Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2020-06-25</Modification_Date>
+					<Modification_Comment>updated Description</Modification_Comment>
+				</Modification>
+         </Content_History>
+      </Weakness>
+      <Weakness ID="61" Name="UNIX Symbolic Link (Symlink) Following" Abstraction="Compound" Structure="Composite" Status="Incomplete">
+         <Description>The software, when opening a file or directory, does not sufficiently account for when the file is a symbolic link that resolves to a target outside of the intended control sphere. This could allow an attacker to cause the software to operate on unauthorized files.</Description>
+         <Extended_Description>A software system that allows UNIX symbolic links (symlink) as part of paths whether in internal code or through user input can allow an attacker to spoof the symbolic link and traverse the file system to unintended locations or access arbitrary files. The symbolic link can permit an attacker to read/write/corrupt a file that they originally did not have permissions to access.</Extended_Description>
+         <Related_Weaknesses>
+            <Related_Weakness Nature="ChildOf" CWE_ID="59" View_ID="1000" Ordinal="Primary"/>
+            <Related_Weakness Nature="Requires" CWE_ID="362" View_ID="1000"/>
+            <Related_Weakness Nature="Requires" CWE_ID="340" View_ID="1000"/>
+            <Related_Weakness Nature="Requires" CWE_ID="386" View_ID="1000"/>
+            <Related_Weakness Nature="Requires" CWE_ID="732" View_ID="1000"/>
+         </Related_Weaknesses>
+         <Weakness_Ordinalities>
+            <Weakness_Ordinality>
+               <Ordinality>Resultant</Ordinality>
+            </Weakness_Ordinality>
+         </Weakness_Ordinalities>
+         <Applicable_Platforms>
+            <Language Class="Language-Independent" Prevalence="Undetermined"/>
+         </Applicable_Platforms>
+         <Alternate_Terms>
+            <Alternate_Term>
+               <Term>Symlink following</Term>
+            </Alternate_Term>
+            <Alternate_Term>
+               <Term>symlink vulnerability</Term>
+            </Alternate_Term>
+         </Alternate_Terms>
+         <Modes_Of_Introduction>
+            <Introduction>
+               <Phase>Implementation</Phase>
+               <Note>These are typically reported for temporary files or privileged programs.</Note>
+            </Introduction>
+         </Modes_Of_Introduction>
+         <Likelihood_Of_Exploit>High</Likelihood_Of_Exploit>
+         <Common_Consequences>
+            <Consequence>
+               <Scope>Confidentiality</Scope>
+               <Scope>Integrity</Scope>
+               <Impact>Read Files or Directories</Impact>
+               <Impact>Modify Files or Directories</Impact>
+            </Consequence>
+         </Common_Consequences>
+         <Potential_Mitigations>
+            <Mitigation>
+               <Phase>Implementation</Phase>
+               <Description>Symbolic link attacks often occur when a program creates a tmp directory that stores files/links. Access to the directory should be restricted to the program as to prevent attackers from manipulating the files.</Description>
+            </Mitigation>
+            <Mitigation Mitigation_ID="MIT-48.1">
+               <Phase>Architecture and Design</Phase>
+               <Strategy>Separation of Privilege</Strategy>
+               <Description>
+                  <xhtml:p>Follow the principle of least privilege when assigning access rights to entities in a software system.</xhtml:p>
+                  <xhtml:p>Denying access to a file can prevent an attacker from replacing that file with a link to a sensitive file. Ensure good compartmentalization in the system to provide protected areas that can be trusted.</xhtml:p>
+               </Description>
+            </Mitigation>
+         </Potential_Mitigations>
+         <Observed_Examples>
+            <Observed_Example>
+               <Reference>CVE-1999-1386</Reference>
+               <Description>Some versions of Perl follows symbolic links when running with the -e option, which allows local users to overwrite arbitrary files via a symlink attack.</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-1386</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2000-1178</Reference>
+               <Description>Text editor follows symbolic links when creating a rescue copy during an abnormal exit, which allows local users to overwrite the files of other users.</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-1178</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2004-0217</Reference>
+               <Description>Antivirus update allows local users to create or append to arbitrary files via a symlink attack on a logfile.</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0217</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2003-0517</Reference>
+               <Description>Symlink attack allows local users to overwrite files.</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0517</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2004-0689</Reference>
+               <Description>Possible interesting example</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0689</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2005-1879</Reference>
+               <Description>Second-order symlink vulnerabilities</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1879</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2005-1880</Reference>
+               <Description>Second-order symlink vulnerabilities</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1880</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2005-1916</Reference>
+               <Description>Symlink in Python program</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1916</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2000-0972</Reference>
+               <Description>Setuid product allows file reading by replacing a file being edited with a symlink to the targeted file, leaking the result in error messages when parsing fails.</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-0972</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2005-0824</Reference>
+               <Description>Signal causes a dump that follows symlinks.</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0824</Link>
+            </Observed_Example>
+         </Observed_Examples>
+         <Taxonomy_Mappings>
+            <Taxonomy_Mapping Taxonomy_Name="PLOVER">
+               <Entry_Name>UNIX symbolic link following</Entry_Name>
+            </Taxonomy_Mapping>
+         </Taxonomy_Mappings>
+         <Related_Attack_Patterns>
+            <Related_Attack_Pattern CAPEC_ID="27"/>
+         </Related_Attack_Patterns>
+         <References>
+            <Reference External_Reference_ID="REF-493"/>
+            <Reference External_Reference_ID="REF-494"/>
+            <Reference External_Reference_ID="REF-62" Section="Chapter 9, &#34;Symbolic Link Attacks&#34;, Page 518"/>
+         </References>
+         <Notes>
+            <Note Type="Research Gap">
+               <xhtml:p>Symlink vulnerabilities are regularly found in C and shell programs, but all programming languages can have this problem. Even shell programs are probably under-reported.</xhtml:p>
+               <xhtml:p>"Second-order symlink vulnerabilities" may exist in programs that invoke other programs that follow symlinks. They are rarely reported but are likely to be fairly common when process invocation is used. Reference: [Christey2005]</xhtml:p>
+            </Note>
+         </Notes>
+         <Content_History>
+            <Submission>
+               <Submission_Name>PLOVER</Submission_Name>
+               <Submission_Date>2006-07-19</Submission_Date>
+            </Submission>
+            <Modification>
+               <Modification_Name>Eric Dalci</Modification_Name>
+               <Modification_Organization>Cigital</Modification_Organization>
+               <Modification_Date>2008-07-01</Modification_Date>
+               <Modification_Comment>updated Time_of_Introduction</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2008-09-08</Modification_Date>
+               <Modification_Comment>updated Relationships, Observed_Example, Other_Notes, Research_Gaps, Taxonomy_Mappings, Weakness_Ordinalities</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2008-10-14</Modification_Date>
+               <Modification_Comment>updated Description</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2009-07-27</Modification_Date>
+               <Modification_Comment>updated Observed_Examples</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2011-06-01</Modification_Date>
+               <Modification_Comment>updated Common_Consequences</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2012-05-11</Modification_Date>
+               <Modification_Comment>updated Observed_Examples, References</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2012-10-30</Modification_Date>
+               <Modification_Comment>updated Potential_Mitigations</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2014-06-23</Modification_Date>
+               <Modification_Comment>updated Modes_of_Introduction, Other_Notes</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2017-11-08</Modification_Date>
+               <Modification_Comment>updated Applicable_Platforms, Causal_Nature, Likelihood_of_Exploit, References, Relationships</Modification_Comment>
+            </Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2020-02-24</Modification_Date>
+					<Modification_Comment>updated Relationships</Modification_Comment>
+				</Modification>
+         </Content_History>
+      </Weakness>
+      <Weakness ID="689" Name="Permission Race Condition During Resource Copy" Abstraction="Compound" Structure="Composite" Status="Draft">
+         <Description>The product, while copying or cloning a resource, does not set the resource's permissions or access control until the copy is complete, leaving the resource exposed to other spheres while the copy is taking place.</Description>
+         <Related_Weaknesses>
+            <Related_Weakness Nature="ChildOf" CWE_ID="362" View_ID="1000"/>
+            <Related_Weakness Nature="Requires" CWE_ID="362" View_ID="1000"/>
+            <Related_Weakness Nature="Requires" CWE_ID="732" View_ID="1000"/>
+         </Related_Weaknesses>
+         <Weakness_Ordinalities>
+            <Weakness_Ordinality>
+               <Ordinality>Primary</Ordinality>
+            </Weakness_Ordinality>
+         </Weakness_Ordinalities>
+         <Applicable_Platforms>
+            <Language Name="C" Prevalence="Undetermined"/>
+            <Language Name="Perl" Prevalence="Undetermined"/>
+         </Applicable_Platforms>
+         <Modes_Of_Introduction>
+            <Introduction>
+               <Phase>Implementation</Phase>
+               <Note>
+                  <xhtml:p>Common examples occur in file archive extraction, in which the product begins the extraction with insecure default permissions, then only sets the final permissions (as specified in the archive) once the copy is complete. The larger the archive, the larger the timing window for the race condition.</xhtml:p>
+                  <xhtml:p>This weakness has also occurred in some operating system utilities that perform copies of deeply nested directories containing a large number of files.</xhtml:p>
+                  <xhtml:p>This weakness can occur in any type of functionality that involves copying objects or resources in a multi-user environment, including at the application level. For example, a document management system might allow a user to copy a private document, but if it does not set the new copy to be private as soon as the copy begins, then other users might be able to view the document while the copy is still taking place.</xhtml:p>
+               </Note>
+            </Introduction>
+         </Modes_Of_Introduction>
+         <Common_Consequences>
+            <Consequence>
+               <Scope>Confidentiality</Scope>
+               <Scope>Integrity</Scope>
+               <Impact>Read Application Data</Impact>
+               <Impact>Modify Application Data</Impact>
+            </Consequence>
+         </Common_Consequences>
+         <Observed_Examples>
+            <Observed_Example>
+               <Reference>CVE-2002-0760</Reference>
+               <Description>Archive extractor decompresses files with world-readable permissions, then later sets permissions to what the archive specified.</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0760</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2005-2174</Reference>
+               <Description>Product inserts a new object into database before setting the object's permissions, introducing a race condition.</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2174</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2006-5214</Reference>
+               <Description>Error file has weak permissions before a chmod is performed.</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5214</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2005-2475</Reference>
+               <Description>Archive permissions issue using hard link.</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2475</Link>
+            </Observed_Example>
+            <Observed_Example>
+               <Reference>CVE-2003-0265</Reference>
+               <Description>Database product creates files world-writable before initializing the setuid bits, leading to modification of executables.</Description>
+               <Link>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0265</Link>
+            </Observed_Example>
+         </Observed_Examples>
+         <Related_Attack_Patterns>
+            <Related_Attack_Pattern CAPEC_ID="26"/>
+            <Related_Attack_Pattern CAPEC_ID="27"/>
+         </Related_Attack_Patterns>
+         <References>
+            <Reference External_Reference_ID="REF-62" Section="Chapter 9, &#34;Permission Races&#34;, Page 533"/>
+         </References>
+         <Notes>
+            <Note Type="Research Gap">Under-studied. It seems likely that this weakness could occur in any situation in which a complex or large copy operation occurs, when the resource can be made available to other spheres as soon as it is created, but before its initialization is complete.</Note>
+         </Notes>
+         <Content_History>
+            <Submission>
+                <Submission_Name>CWE Content Team</Submission_Name>
+				<Submission_Organization>MITRE</Submission_Organization>
+                <Submission_Date>2008-04-11</Submission_Date>
+            </Submission>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2008-09-08</Modification_Date>
+               <Modification_Comment>updated Applicable_Platforms, Relationships, Other_Notes, Weakness_Ordinalities</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2009-03-10</Modification_Date>
+               <Modification_Comment>updated Related_Attack_Patterns</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2010-09-27</Modification_Date>
+               <Modification_Comment>updated Relationships</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2011-06-01</Modification_Date>
+               <Modification_Comment>updated Common_Consequences</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2012-05-11</Modification_Date>
+               <Modification_Comment>updated References</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2014-06-23</Modification_Date>
+               <Modification_Comment>updated Modes_of_Introduction, Other_Notes</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2017-11-08</Modification_Date>
+               <Modification_Comment>updated Relationships</Modification_Comment>
+            </Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2020-02-24</Modification_Date>
+					<Modification_Comment>updated Relationships</Modification_Comment>
+				</Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2020-08-20</Modification_Date>
+					<Modification_Comment>updated Relationships</Modification_Comment>
+				</Modification>
+         </Content_History>
+      </Weakness>
+   </Weaknesses>
+   <Categories>
+   </Categories>
+   <Views>
+      <View ID="678" Name="Composites" Type="Implicit" Status="Draft">
+         <Objective>This view displays only composite weaknesses.</Objective>
+         <Filter>/Weakness_Catalog/Weaknesses/Weakness[@Structure='Composite'][not(@Status='Deprecated')]</Filter>
+         <Content_History>
+            <Submission>
+                <Submission_Name>CWE Content Team</Submission_Name>
+				<Submission_Organization>MITRE</Submission_Organization>
+                <Submission_Date>2008-04-11</Submission_Date>
+            </Submission>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2008-09-08</Modification_Date>
+               <Modification_Comment>updated Description, View_Filter, View_Structure</Modification_Comment>
+            </Modification>
+            <Modification>
+               <Modification_Name>CWE Content Team</Modification_Name>
+               <Modification_Organization>MITRE</Modification_Organization>
+               <Modification_Date>2017-11-08</Modification_Date>
+               <Modification_Comment>updated Description, View_Structure</Modification_Comment>
+            </Modification>
+				<Modification>
+					<Modification_Name>CWE Content Team</Modification_Name>
+					<Modification_Organization>MITRE</Modification_Organization>
+					<Modification_Date>2019-01-03</Modification_Date>
+					<Modification_Comment>updated View_Filter</Modification_Comment>
+				</Modification>
+         </Content_History>
+      </View>
+   </Views>
+   <External_References>
+      <External_Reference Reference_ID="REF-6">
+			<Author>Katrina Tsipenyuk</Author>
+			<Author>Brian Chess</Author>
+			<Author>Gary McGraw</Author>
+			<Title>Seven Pernicious Kingdoms: A Taxonomy of Software Security Errors</Title>
+			<Publication>NIST Workshop on Software Security Assurance Tools Techniques and Metrics</Publication>
+			<Publication_Year>2005</Publication_Year>
+			<Publication_Month>--11</Publication_Month>
+			<Publication_Day>---07</Publication_Day>
+			<Publisher>NIST</Publisher>
+			<URL>https://samate.nist.gov/SSATTM_Content/papers/Seven%20Pernicious%20Kingdoms%20-%20Taxonomy%20of%20Sw%20Security%20Errors%20-%20Tsipenyuk%20-%20Chess%20-%20McGraw.pdf</URL>
+		</External_Reference>
+      <External_Reference Reference_ID="REF-44">
+			<Author>Michael Howard</Author>
+			<Author>David LeBlanc</Author>
+			<Author>John Viega</Author>
+			<Title>24 Deadly Sins of Software Security</Title>
+			<Publication>McGraw-Hill</Publication>
+			<Publication_Year>2010</Publication_Year>
+		</External_Reference>
+      <External_Reference Reference_ID="REF-45">
+			<Author>OWASP</Author>
+			<Title>OWASP Enterprise Security API (ESAPI) Project</Title>
+			<URL>http://www.owasp.org/index.php/ESAPI</URL>
+		</External_Reference>
+      <External_Reference Reference_ID="REF-62">
+			<Author>Mark Dowd</Author>
+			<Author>John McDonald</Author>
+			<Author>Justin Schuh</Author>
+			<Title>The Art of Software Security Assessment</Title>
+			<Edition>1st Edition</Edition>
+			<Publication_Year>2006</Publication_Year>
+			<Publisher>Addison Wesley</Publisher>
+		</External_Reference>
+      <External_Reference Reference_ID="REF-329">
+			<Author>Peter W</Author>
+			<Title>Cross-Site Request Forgeries (Re: The Dangers of Allowing Users to Post Images)</Title>
+			<Publication>Bugtraq</Publication>
+			<URL>http://marc.info/?l=bugtraq&amp;m=99263135911884&amp;w=2</URL>
+		</External_Reference>
+      <External_Reference Reference_ID="REF-330">
+			<Author>OWASP</Author>
+			<Title>Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet</Title>
+			<URL>http://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet</URL>
+		</External_Reference>
+      <External_Reference Reference_ID="REF-331">
+			<Author>Edward W. Felten</Author>
+			<Author>William Zeller</Author>
+			<Title>Cross-Site Request Forgeries: Exploitation and Prevention</Title>
+			<Publication_Year>2008</Publication_Year>
+			<Publication_Month>--10</Publication_Month>
+			<Publication_Day>---18</Publication_Day>
+			<URL>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.147.1445</URL>
+		</External_Reference>
+      <External_Reference Reference_ID="REF-332">
+			<Author>Robert Auger</Author>
+			<Title>CSRF - The Cross-Site Request Forgery (CSRF/XSRF) FAQ</Title>
+			<URL>http://www.cgisecurity.com/articles/csrf-faq.shtml</URL>
+		</External_Reference>
+      <External_Reference Reference_ID="REF-333">
+			<Title>Cross-site request forgery</Title>
+			<Publication_Year>2008</Publication_Year>
+			<Publication_Month>--12</Publication_Month>
+			<Publication_Day>---22</Publication_Day>
+			<Publisher>Wikipedia</Publisher>
+			<URL>http://en.wikipedia.org/wiki/Cross-site_request_forgery</URL>
+		</External_Reference>
+      <External_Reference Reference_ID="REF-334">
+			<Author>Jason Lam</Author>
+			<Title>Top 25 Series - Rank 4 - Cross Site Request Forgery</Title>
+			<Publication_Year>2010</Publication_Year>
+			<Publication_Month>--03</Publication_Month>
+			<Publication_Day>---03</Publication_Day>
+			<Publisher>SANS Software Security Institute</Publisher>
+			<URL>http://software-security.sans.org/blog/2010/03/03/top-25-series-rank-4-cross-site-request-forgery</URL>
+		</External_Reference>
+      <External_Reference Reference_ID="REF-335">
+			<Author>Jeff Atwood</Author>
+			<Title>Preventing CSRF and XSRF Attacks</Title>
+			<Publication_Year>2008</Publication_Year>
+			<Publication_Month>--10</Publication_Month>
+			<Publication_Day>---14</Publication_Day>
+			<URL>http://www.codinghorror.com/blog/2008/10/preventing-csrf-and-xsrf-attacks.html</URL>
+		</External_Reference>
+      <External_Reference Reference_ID="REF-493">
+			<Author>Steve Christey</Author>
+			<Title>Second-Order Symlink Vulnerabilities</Title>
+			<Publication>Bugtraq</Publication>
+			<Publication_Year>2005</Publication_Year>
+			<Publication_Month>--06</Publication_Month>
+			<Publication_Day>---07</Publication_Day>
+			<URL>http://www.securityfocus.com/archive/1/401682</URL>
+		</External_Reference>
+      <External_Reference Reference_ID="REF-494">
+			<Author>Shaun Colley</Author>
+			<Title>Crafting Symlinks for Fun and Profit</Title>
+			<Publication>Infosec Writers Text Library</Publication>
+			<Publication_Year>2004</Publication_Year>
+			<Publication_Month>--04</Publication_Month>
+			<Publication_Day>---12</Publication_Day>
+			<URL>http://www.infosecwriters.com/texts.php?op=display&amp;id=159</URL>
+		</External_Reference>
+      <External_Reference Reference_ID="REF-956">
+			<Author>Wikipedia</Author>
+			<Title>Samy (computer worm)</Title>
+			<URL>https://en.wikipedia.org/wiki/Samy_(computer_worm)</URL>
+			<URL_Date>2018-01-16</URL_Date>
+		</External_Reference>
+   </External_References>
+</Weakness_Catalog>
