@@ -1,0 +1,199 @@
+capec_id,cwe_id,consequence_scope,consequence_impact,taxonomy_mapping_value,technique_id,technique_name
+CAPEC-490,CWE-770,N/A,N/A,"1498.002,Network Denial of ServiceReflection Amplification",1498.002,Network Denial of ServiceReflection Amplification
+CAPEC-163,N/A,Accountability,Gain Privileges,"1534,Internal Spearfishing",1534,Internal Spearfishing
+CAPEC-163,N/A,Accountability,Gain Privileges,"1566.001,PhishingSpearfishing Attachment",1566.001,PhishingSpearfishing Attachment
+CAPEC-163,N/A,Accountability,Gain Privileges,"1566.002,PhishingSpearfishing Link",1566.002,PhishingSpearfishing Link
+CAPEC-163,N/A,Accountability,Gain Privileges,"1566.003,PhishingSpearfishing via Service",1566.003,PhishingSpearfishing via Service
+CAPEC-480,CWE-693,Access Control,Bypass Protection Mechanism,"1611,Escape to Host",1611,Escape to Host
+CAPEC-576,CWE-200,Access Control,Bypass Protection Mechanism,"1069,Permission Groups Discovery",1069,Permission Groups Discovery
+CAPEC-558,CWE-284,N/A,N/A,"1546.008,Event Triggered ExecutionAccessibility Features",1546.008,Event Triggered ExecutionAccessibility Features
+CAPEC-562,CWE-284,N/A,N/A,"1080,Taint shared content",1080,Taint shared content
+CAPEC-574,CWE-200,Access Control,Bypass Protection Mechanism,"1007,System Service Discovery",1007,System Service Discovery
+CAPEC-19,CWE-284,Access Control,Gain Privileges,"1546.004,Event Triggered Execution.bash_profile and .bashrc",1546.004,Event Triggered Execution.bash_profile and .bashrc
+CAPEC-100,CWE-119,Access Control,Gain Privileges,"1574.010,Hijack Execution Flow ServicesFile Permissions Weakness",1574.010,Hijack Execution Flow ServicesFile Permissions Weakness
+CAPEC-185,CWE-494,N/A,N/A,"1105,Ingress Tool Transfer",1105,Ingress Tool Transfer
+CAPEC-479,CWE-284,N/A,N/A,"1553.004,Subvert Trust ControlsInstall Root Certificate",1553.004,Subvert Trust ControlsInstall Root Certificate
+CAPEC-126,CWE-22,Availability,Execute Unauthorized Commands,"1498.001,Network Denial of ServiceDirect Network Flood",1498.001,Network Denial of ServiceDirect Network Flood
+CAPEC-637,CWE-267,Confidentiality,Read Data,"1115,Clipboard Data",1115,Clipboard Data
+CAPEC-578,CWE-284,Availability,Hide Activities,"1562.001,Impair DefensesDisable or Modify Tools",1562.001,Impair DefensesDisable or Modify Tools
+CAPEC-646,CWE-200,N/A,N/A,"1120,Peripheral Device Discovery",1120,Peripheral Device Discovery
+CAPEC-93,CWE-117,Integrity,Modify Data,"1070,Indicator Removal on Host",1070,Indicator Removal on Host
+CAPEC-177,CWE-706,N/A,N/A,"1036,Masquerading",1036,Masquerading
+CAPEC-581,N/A,N/A,N/A,"1518.001,Software DiscoverySecurity Software Discovery",1518.001,Software DiscoverySecurity Software Discovery
+CAPEC-438,N/A,N/A,N/A,"1195,Supply Chain Compromise",1195,Supply Chain Compromise
+CAPEC-61,CWE-384,Access Control,Gain Privileges,"1110.004,Brute ForceCredential Stuffing",1110.004,Brute ForceCredential Stuffing
+CAPEC-1,CWE-1193,Access Control,Gain Privileges,"1574.010,Hijack Execution Flow ServicesFile Permissions Weakness",1574.010,Hijack Execution Flow ServicesFile Permissions Weakness
+CAPEC-560,CWE-1273,Access Control,Gain Privileges,"1078.001,Valid AccountsDefault Accounts",1078.001,Valid AccountsDefault Accounts
+CAPEC-560,CWE-1273,Access Control,Gain Privileges,"1078.002,Valid AccountsDomain Accounts",1078.002,Valid AccountsDomain Accounts
+CAPEC-560,CWE-1273,Access Control,Gain Privileges,"1078.003,Valid AccountsLocal Accounts",1078.003,Valid AccountsLocal Accounts
+CAPEC-136,CWE-20,Access Control,Bypass Protection Mechanism,"1547.009,Boot or Logon Autostart ExecutionShortcut Modification",1547.009,Boot or Logon Autostart ExecutionShortcut Modification
+CAPEC-132,CWE-59,Access Control,Bypass Protection Mechanism,"1547.009,Boot or Logon Autostart ExecutionShortcut Modification",1547.009,Boot or Logon Autostart ExecutionShortcut Modification
+CAPEC-107,CWE-648,Access Control,Gain Privileges,"1574.010,Hijack Execution Flow ServicesFile Permissions Weakness",1574.010,Hijack Execution Flow ServicesFile Permissions Weakness
+CAPEC-660,CWE-829,Access Control,Gain Privileges,"1055,Process Injection",1055,Process Injection
+CAPEC-565,CWE-262,Access Control,Gain Privileges,"1110.003,Brute ForcePassword Spraying",1110.003,Brute ForcePassword Spraying
+CAPEC-295,CWE-200,Confidentiality,Other,"1124,System Time Discovery",1124,System Time Discovery
+CAPEC-593,CWE-287,Availability,Gain Privileges,"1550.001,Use Alternate Authentication MaterialApplication Access Token",1550.001,Use Alternate Authentication MaterialApplication Access Token
+CAPEC-593,CWE-287,Availability,Gain Privileges,"1563,Remote Service Session Hijacking",1563,Remote Service Session Hijacking
+CAPEC-642,CWE-732,N/A,N/A,"1574.005,Hijack Execution FlowExecutable Installer File Permissions Weakness",1574.005,Hijack Execution FlowExecutable Installer File Permissions Weakness
+CAPEC-642,CWE-732,N/A,N/A,"1574.010,Hijack Execution FlowService File Permissions Weakness",1574.010,Hijack Execution FlowService File Permissions Weakness
+CAPEC-644,CWE-294,Access Control,Gain Privileges,"1550.002,Use Alternate Authentication MaterialPass The Hash",1550.002,Use Alternate Authentication MaterialPass The Hash
+CAPEC-300,CWE-200,Access Control,Bypass Protection Mechanism,"1046,Network Service Scanning",1046,Network Service Scanning
+CAPEC-650,CWE-287,Access Control,Gain Privileges,"1505.003,Server Software ComponentWeb Shell",1505.003,Server Software ComponentWeb Shell
+CAPEC-21,CWE-290,Access Control,Gain Privileges,"1134,Access Token Manipulation",1134,Access Token Manipulation
+CAPEC-63,CWE-20,Availability,Execute Unauthorized Commands,"1110.004,Brute ForceCredential Stuffing",1110.004,Brute ForceCredential Stuffing
+CAPEC-256,CWE-805,N/A,N/A,"1055,Process Injection",1055,Process Injection
+CAPEC-62,CWE-1275,Access Control,Gain Privileges,"1110.004,Brute ForceCredential Stuffing",1110.004,Brute ForceCredential Stuffing
+CAPEC-17,CWE-270,Access Control,Gain Privileges,"1574.010,Hijack Execution FlowServices File Permissions Weakness",1574.010,Hijack Execution FlowServices File Permissions Weakness
+CAPEC-159,CWE-706,Access Control,Bypass Protection Mechanism,"1574.008,Hijack Execution FlowPath Interception by Search Order Hijacking",1574.008,Hijack Execution FlowPath Interception by Search Order Hijacking
+CAPEC-158,CWE-311,Confidentiality,Read Data,"1040,Network Sniffing",1040,Network Sniffing
+CAPEC-569,N/A,N/A,N/A,"1056,Input Capture",1056,Input Capture
+CAPEC-564,CWE-284,N/A,N/A,"1037,Boot or Logon Initialization Scripts",1037,Boot or Logon Initialization Scripts
+CAPEC-564,CWE-284,N/A,N/A,"1543.001,Create or Modify System ProcessLaunch Agent",1543.001,Create or Modify System ProcessLaunch Agent
+CAPEC-564,CWE-284,N/A,N/A,"1547,Boot or Logon Autostart Execution",1547,Boot or Logon Autostart Execution
+CAPEC-647,CWE-285,Confidentiality,Read Data,"1005,Data from Local System",1005,Data from Local System
+CAPEC-647,CWE-285,Confidentiality,Read Data,"1552.002,Unsecured CredentialsCredentials in Registry",1552.002,Unsecured CredentialsCredentials in Registry
+CAPEC-571,N/A,N/A,N/A,"1562.006,Impair DefensesIndicator Blocking",1562.006,Impair DefensesIndicator Blocking
+CAPEC-55,CWE-261,Access Control,Gain Privileges,"1110.002,Brute ForcePassword Cracking",1110.002,Brute ForcePassword Cracking
+CAPEC-532,N/A,N/A,N/A,"1542.001,Pre-OS BootSystem Firmware",1542.001,Pre-OS BootSystem Firmware
+CAPEC-66,CWE-1286,Access Control,Gain Privileges,"1017,Application Deployment Software",1017,Application Deployment Software
+CAPEC-662,CWE-300,Access Control,Gain Privileges,"1185,Man in the Browser",1185,Man in the Browser
+CAPEC-460,CWE-147,N/A,N/A,"1200,Hardware Additions",1200,Hardware Additions
+CAPEC-141,CWE-345,N/A,N/A,"1547.009,Boot or Logon Autostart ExecutionShortcut Modification",1547.009,Boot or Logon Autostart ExecutionShortcut Modification
+CAPEC-168,CWE-212,N/A,N/A,"1566.003,PhishingSpearfishing via Service",1566.003,PhishingSpearfishing via Service
+CAPEC-634,CWE-267,Confidentiality,Read Data,"1123,Audio Capture",1123,Audio Capture
+CAPEC-634,CWE-267,Confidentiality,Read Data,"1125,Video Capture",1125,Video Capture
+CAPEC-487,CWE-770,N/A,N/A,"1498.001,Network Denial of ServiceDirect Network Flood",1498.001,Network Denial of ServiceDirect Network Flood
+CAPEC-492,CWE-1333,N/A,N/A,"1498.002,Network Denial of ServiceReflection Amplification",1498.002,Network Denial of ServiceReflection Amplification
+CAPEC-572,N/A,Availability,Resource Consumption,"1027.001,Obfuscated Files or InformationBinary Padding",1027.001,Obfuscated Files or InformationBinary Padding
+CAPEC-125,CWE-404,Availability,Resource Consumption,"1498.001,Network Denial of ServiceDirect Network Flood",1498.001,Network Denial of ServiceDirect Network Flood
+CAPEC-240,CWE-99,Confidentiality,Read Data,"1548,Abuse Elevation Control Mechanism",1548,Abuse Elevation Control Mechanism
+CAPEC-176,CWE-1233,N/A,N/A,"1574.010,Hijack Execution FlowServices File Permissions Weakness",1574.010,Hijack Execution FlowServices File Permissions Weakness
+CAPEC-206,CWE-732,N/A,N/A,"1553.002,Subvert Trust ControlsCode Signing",1553.002,Subvert Trust ControlsCode Signing
+CAPEC-251,CWE-829,Confidentiality,Read Data,"1055,Process Injection",1055,Process Injection
+CAPEC-227,N/A,N/A,N/A,"1499,Endpoint Denial of Service",1499,Endpoint Denial of Service
+CAPEC-561,CWE-262,Access Control,Gain Privileges,"1021.002,Remote ServicesSMB/Windows Admin Shares",1021.002,Remote ServicesSMB/Windows Admin Shares
+CAPEC-38,CWE-426,Access Control,Gain Privileges,"1574.007,Hijack Execution FlowPath Interception by PATH Environment Variable",1574.007,Hijack Execution FlowPath Interception by PATH Environment Variable
+CAPEC-552,CWE-284,N/A,N/A,"1014,Rootkit",1014,Rootkit
+CAPEC-552,CWE-284,N/A,N/A,"1542.003,Pre-OS BootBootkit",1542.003,Pre-OS BootBootkit
+CAPEC-552,CWE-284,N/A,N/A,"1547.006,Boot or Logon Autostart ExecutionKernel Modules and Extensions",1547.006,Boot or Logon Autostart ExecutionKernel Modules and Extensions
+CAPEC-112,CWE-326,Access Control,Gain Privileges,"1574.010,Hijack Execution Flow ServicesFile Permissions Weakness",1574.010,Hijack Execution Flow ServicesFile Permissions Weakness
+CAPEC-575,CWE-200,Access Control,Bypass Protection Mechanism,"1087,Account Discovery",1087,Account Discovery
+CAPEC-270,CWE-15,Integrity,Gain Privileges,"1547.001,Boot or Logon Autostart ExecutionRegistry Run Keys – Start Folder",1547.001,Boot or Logon Autostart ExecutionRegistry Run Keys – Start Folder
+CAPEC-273,CWE-436,Access Control,Gain Privileges,"1547.001,Boot or Logon Autostart ExecutionRegistry Run Keys – Start Folder",1547.001,Boot or Logon Autostart ExecutionRegistry Run Keys – Start Folder
+CAPEC-203,CWE-15,N/A,N/A,"1112,Modify Registry",1112,Modify Registry
+CAPEC-92,CWE-120,Access Control,Gain Privileges,"1078.001,Valid AccountsDefault Accounts",1078.001,Valid AccountsDefault Accounts
+CAPEC-309,CWE-200,Confidentiality,Other,"1016,System Network Configuration Discovery",1016,System Network Configuration Discovery
+CAPEC-34,CWE-113,Access Control,Gain Privileges,"1082,System Information Discovery",1082,System Information Discovery
+CAPEC-101,CWE-20,Availability,Execute Unauthorized Commands,"1574.010,Hijack Execution Flow ServicesFile Permissions Weakness",1574.010,Hijack Execution Flow ServicesFile Permissions Weakness
+CAPEC-60,CWE-200,Access Control,Gain Privileges,"1134.001,Access Token ManipulationToken Impersonation/Theft",1134.001,Access Token ManipulationToken Impersonation/Theft
+CAPEC-60,CWE-200,Access Control,Gain Privileges,"1134.002,Access Token ManipulationCreate Process with Token",1134.002,Access Token ManipulationCreate Process with Token
+CAPEC-60,CWE-200,Access Control,Gain Privileges,"1550.004,Use Alternate Authentication MaterialWeb Session Cookie",1550.004,Use Alternate Authentication MaterialWeb Session Cookie
+CAPEC-248,CWE-77,Availability,Execute Unauthorized Commands,"1548,Abuse Elevation Control Mechanism",1548,Abuse Elevation Control Mechanism
+CAPEC-194,CWE-287,Integrity,Alter Execution Logic,"1552.001,Unsecured CredentialsCredentials in files",1552.001,Unsecured CredentialsCredentials in files
+CAPEC-221,CWE-611,Availability,Execute Unauthorized Commands,"1134,Access Token Manipulation",1134,Access Token Manipulation
+CAPEC-439,CWE-1269,N/A,N/A,"1195,Supply Chain Compromise",1195,Supply Chain Compromise
+CAPEC-94,CWE-287,Access Control,Gain Privileges,"1557,Man-in-the-Middle",1557,Man-in-the-Middle
+CAPEC-509,CWE-262,Confidentiality,Gain Privileges,"1558.003,Steal or Forge Kerberos TicketsKerberoasting",1558.003,Steal or Forge Kerberos TicketsKerberoasting
+CAPEC-250,CWE-20,Access Control,Gain Privileges,"1548,Abuse Elevation Control Mechanism",1548,Abuse Elevation Control Mechanism
+CAPEC-83,CWE-20,Access Control,Gain Privileges,"1078.001,Valid AccountsDefault Accounts",1078.001,Valid AccountsDefault Accounts
+CAPEC-482,CWE-770,N/A,N/A,"1498.001,Network Denial of ServiceDirect Network Flood",1498.001,Network Denial of ServiceDirect Network Flood
+CAPEC-482,CWE-770,N/A,N/A,"1499.001,Endpoint Denial of ServiceOS Exhaustion Flood",1499.001,Endpoint Denial of ServiceOS Exhaustion Flood
+CAPEC-478,CWE-284,Integrity,Execute Unauthorized Commands,"1543.003,Create or Modify System ProcessWindows Service",1543.003,Create or Modify System ProcessWindows Service
+CAPEC-478,CWE-284,Integrity,Execute Unauthorized Commands,"1574.011,Hijack Execution FlowService Registry Permissions Weakness",1574.011,Hijack Execution FlowService Registry Permissions Weakness
+CAPEC-30,CWE-270,Access Control,Gain Privileges,"1055.003,Process InjectionThread Execution Hijacking",1055.003,Process InjectionThread Execution Hijacking
+CAPEC-550,CWE-284,N/A,N/A,"1543.002,Create or Modify System ProcessSystemd Service",1543.002,Create or Modify System ProcessSystemd Service
+CAPEC-550,CWE-284,N/A,N/A,"1543.003,Create or Modify System ProcessWindows Service",1543.003,Create or Modify System ProcessWindows Service
+CAPEC-550,CWE-284,N/A,N/A,"1543.004,Create or Modify System ProcessLaunch Daemon",1543.004,Create or Modify System ProcessLaunch Daemon
+CAPEC-633,CWE-1270,Integrity,Alter Execution Logic,"1134,Access Token Manipulation",1134,Access Token Manipulation
+CAPEC-7,CWE-20,Availability,Execute Unauthorized Commands,"T1556,Modify Authentication Process",T1556,Modify Authentication Process
+CAPEC-150,CWE-1239,N/A,N/A,"1119,Automated Collection",1119,Automated Collection
+CAPEC-103,CWE-1021,Access Control,Gain Privileges,"1574.010,Hijack Execution Flow ServicesFile Permissions Weakness",1574.010,Hijack Execution Flow ServicesFile Permissions Weakness
+CAPEC-481,N/A,Confidentiality,Modify Data,"1090.004,ProxyDomain Fronting",1090.004,ProxyDomain Fronting
+CAPEC-579,N/A,N/A,N/A,"1547.004,Boot or Logon Autostart ExecutionWinlogon helper DLL",1547.004,Boot or Logon Autostart ExecutionWinlogon helper DLL
+CAPEC-233,CWE-1264,N/A,N/A,"1548,Abuse Elevation Control Mechanism",1548,Abuse Elevation Control Mechanism
+CAPEC-292,CWE-200,Access Control,Bypass Protection Mechanism,"1018,Remote System Discovery",1018,Remote System Discovery
+CAPEC-98,N/A,Access Control,Gain Privileges,"1566,Phishing",1566,Phishing
+CAPEC-556,CWE-284,N/A,N/A,"1546.001,Event Triggered ExecutionChange Default File Association",1546.001,Event Triggered ExecutionChange Default File Association
+CAPEC-127,CWE-276,Confidentiality,Read Data,"1083,File and Directory Discovery",1083,File and Directory Discovery
+CAPEC-587,N/A,Confidentiality,Read Data,"1518.001,Software DiscoverySecurity Software Discovery",1518.001,Software DiscoverySecurity Software Discovery
+CAPEC-67,CWE-120,Access Control,Gain Privileges,"T1556,Modify Authentication Process",T1556,Modify Authentication Process
+CAPEC-545,CWE-1239,N/A,N/A,"1005,Data from Local System",1005,Data from Local System
+CAPEC-545,CWE-1239,N/A,N/A,"1555.001,Credentials from Password StoresKeychain",1555.001,Credentials from Password StoresKeychain
+CAPEC-655,N/A,Accountability,Bypass Protection Mechanism,"1027.001,Obfuscated Files or InformationBinary padding",1027.001,Obfuscated Files or InformationBinary padding
+CAPEC-10,CWE-118,Access Control,Gain Privileges,"1574.010,Hijack Execution Flow ServicesFile Permissions Weakness",1574.010,Hijack Execution Flow ServicesFile Permissions Weakness
+CAPEC-639,CWE-552,Confidentiality,Read Data,"1039,Data from Network Shared Drive",1039,Data from Network Shared Drive
+CAPEC-639,CWE-552,Confidentiality,Read Data,"1552.001,Unsecured CredentialsCredentials in Files",1552.001,Unsecured CredentialsCredentials in Files
+CAPEC-652,CWE-262,Access Control,Gain Privileges,"1558,Steal or Forge Kerberos Tickets",1558,Steal or Forge Kerberos Tickets
+CAPEC-641,CWE-706,Integrity,Bypass Protection Mechanism,"1574.002,Hijack Execution FlowDLL Side-Loading",1574.002,Hijack Execution FlowDLL Side-Loading
+CAPEC-191,CWE-798,N/A,N/A,"1552.001,Unsecured CredentialsCredentials in files",1552.001,Unsecured CredentialsCredentials in files
+CAPEC-573,CWE-200,Access Control,Bypass Protection Mechanism,"1057,Process Discovery",1057,Process Discovery
+CAPEC-59,CWE-200,Access Control,Gain Privileges,"1518.001,Software DiscoverySecurity Software Discovery",1518.001,Software DiscoverySecurity Software Discovery
+CAPEC-229,CWE-770,N/A,N/A,"1499,Endpoint Denial of Service",1499,Endpoint Denial of Service
+CAPEC-131,CWE-404,Availability,Resource Consumption,"1499,Endpoint Denial of Service",1499,Endpoint Denial of Service
+CAPEC-489,CWE-770,N/A,N/A,"1498.001,Network Denial of ServiceDirect Network Flood",1498.001,Network Denial of ServiceDirect Network Flood
+CAPEC-489,CWE-770,N/A,N/A,"1499.002,Endpoint Denial of ServiceService Exhaustion Flood",1499.002,Endpoint Denial of ServiceService Exhaustion Flood
+CAPEC-52,CWE-158,Access Control,Gain Privileges,"1558.003,Steal or Forge Kerberos TicketsKerberoasting",1558.003,Steal or Forge Kerberos TicketsKerberoasting
+CAPEC-528,CWE-770,Availability,Resource Consumption,"1498.001,Network Denial of ServiceDirect Network Flood",1498.001,Network Denial of ServiceDirect Network Flood
+CAPEC-528,CWE-770,Availability,Resource Consumption,"1499.002,Endpoint Denial of ServiceService Exhaustion Flood",1499.002,Endpoint Denial of ServiceService Exhaustion Flood
+CAPEC-551,CWE-284,N/A,N/A,"1543.002,Create or Modify System ProcessSystemd Service",1543.002,Create or Modify System ProcessSystemd Service
+CAPEC-551,CWE-284,N/A,N/A,"1543.003,Create or Modify System ProcessWindows Service",1543.003,Create or Modify System ProcessWindows Service
+CAPEC-551,CWE-284,N/A,N/A,"1543.004,Create or Modify System ProcessLaunch Daemon",1543.004,Create or Modify System ProcessLaunch Daemon
+CAPEC-219,CWE-441,Access Control,Bypass Protection Mechanism,"1134,Access Token Manipulation",1134,Access Token Manipulation
+CAPEC-649,CWE-46,Availability,Execute Unauthorized Commands,"1036.006,MasqueradingSpace after Filename",1036.006,MasqueradingSpace after Filename
+CAPEC-600,CWE-262,Access Control,Gain Privileges,"1110.004,Brute ForceCredential Stuffing",1110.004,Brute ForceCredential Stuffing
+CAPEC-580,N/A,Confidentiality,Read Data,"1518,Software Discovery",1518,Software Discovery
+CAPEC-440,N/A,Integrity,Execute Unauthorized Commands,"1200,Hardware Additions",1200,Hardware Additions
+CAPEC-312,CWE-200,Access Control,Hide Activities,"1082,System Information Discovery",1082,System Information Discovery
+CAPEC-471,CWE-427,N/A,N/A,"1574.001,Hijack Execution FlowDLL search order hijacking",1574.001,Hijack Execution FlowDLL search order hijacking
+CAPEC-471,CWE-427,N/A,N/A,"1574.004,Hijack Execution FlowDylib Hijacking",1574.004,Hijack Execution FlowDylib Hijacking
+CAPEC-224,CWE-200,Confidentiality,Read Data,"1134,Access Token Manipulation",1134,Access Token Manipulation
+CAPEC-577,CWE-200,Access Control,Bypass Protection Mechanism,"1033,System Owner/User Discovery",1033,System Owner/User Discovery
+CAPEC-488,CWE-770,N/A,N/A,"1498.001,Network Denial of ServiceDirect Network Flood",1498.001,Network Denial of ServiceDirect Network Flood
+CAPEC-488,CWE-770,N/A,N/A,"1499.002,Endpoint Denial of ServiceService Exhaustion Flood",1499.002,Endpoint Denial of ServiceService Exhaustion Flood
+CAPEC-253,CWE-829,N/A,N/A,"1055,Process Injection",1055,Process Injection
+CAPEC-134,CWE-150,N/A,N/A,"1547.009,Boot or Logon Autostart ExecutionShortcut Modification",1547.009,Boot or Logon Autostart ExecutionShortcut Modification
+CAPEC-97,CWE-1204,Confidentiality,Read Data,"1557,Man-in-the-Middle",1557,Man-in-the-Middle
+CAPEC-645,CWE-294,Integrity,Gain Privileges,"1550.003,Use Alternate Authentication MaterialPass The Ticket",1550.003,Use Alternate Authentication MaterialPass The Ticket
+CAPEC-568,N/A,N/A,N/A,"1056.001,Input CaptureKeylogging",1056.001,Input CaptureKeylogging
+CAPEC-640,N/A,Confidentiality,Execute Unauthorized Commands,"1055,Process Injection",1055,Process Injection
+CAPEC-640,N/A,Confidentiality,Execute Unauthorized Commands,"1574.006,Hijack Execution FlowDynamic Linker Hijacking",1574.006,Hijack Execution FlowDynamic Linker Hijacking
+CAPEC-636,N/A,N/A,N/A,"1001.002,Data ObfuscationSteganography",1001.002,Data ObfuscationSteganography
+CAPEC-636,N/A,N/A,N/A,"1218.001,Signed Binary Proxy ExecutionCompiled HTML File",1218.001,Signed Binary Proxy ExecutionCompiled HTML File
+CAPEC-555,CWE-262,N/A,N/A,"1021,Remote Services",1021,Remote Services
+CAPEC-555,CWE-262,N/A,N/A,"1114.002,Email CollectionRemote Email Collection",1114.002,Email CollectionRemote Email Collection
+CAPEC-555,CWE-262,N/A,N/A,"1133,External Remote Services",1133,External Remote Services
+CAPEC-648,CWE-267,Confidentiality,Read Data,"1113,Screen Capture",1113,Screen Capture
+CAPEC-242,CWE-94,Availability,Other,"1548,Abuse Elevation Control Mechanism",1548,Abuse Elevation Control Mechanism
+CAPEC-187,CWE-494,Access Control,Execute Unauthorized Commands,"1072,Software Deployment Tools",1072,Software Deployment Tools
+CAPEC-665,CWE-1188,Access Control,Bypass Protection Mechanism,"T1211,Exploitation for Defensive Evasion",T1211,Exploitation for Defensive Evasion
+CAPEC-665,CWE-1188,Access Control,Bypass Protection Mechanism,"T1495,Firmware Corruption",T1495,Firmware Corruption
+CAPEC-665,CWE-1188,Access Control,Bypass Protection Mechanism,"T1556,Modify Authentication Process",T1556,Modify Authentication Process
+CAPEC-70,CWE-262,Access Control,Gain Privileges,"1078.001,Valid AccountsDefault Accounts",1078.001,Valid AccountsDefault Accounts
+CAPEC-33,CWE-444,Access Control,Gain Privileges,"1082,System Information Discovery",1082,System Information Discovery
+CAPEC-588,CWE-20,Access Control,Gain Privileges,"1518.001,Software DiscoverySecurity Software Discovery",1518.001,Software DiscoverySecurity Software Discovery
+CAPEC-169,CWE-200,Confidentiality,Read Data,"1217,Browser Bookmark Discovery",1217,Browser Bookmark Discovery
+CAPEC-169,CWE-200,Confidentiality,Read Data,"1595,Active Scanning",1595,Active Scanning
+CAPEC-268,CWE-117,N/A,N/A,"1055,Process Injection",1055,Process Injection
+CAPEC-135,CWE-134,Access Control,Bypass Protection Mechanism,"1547.009,Boot or Logon Autostart ExecutionShortcut Modification",1547.009,Boot or Logon Autostart ExecutionShortcut Modification
+CAPEC-486,CWE-770,N/A,N/A,"1498.001,Network Denial of ServiceDirect Network Flood",1498.001,Network Denial of ServiceDirect Network Flood
+CAPEC-87,CWE-285,Access Control,Bypass Protection Mechanism,"1078.001,Valid AccountsDefault Accounts",1078.001,Valid AccountsDefault Accounts
+CAPEC-88,CWE-20,Access Control,Bypass Protection Mechanism,"1078.001,Valid AccountsDefault Accounts",1078.001,Valid AccountsDefault Accounts
+CAPEC-148,CWE-345,Integrity,Modify Data,"1547.009,Boot or Logon Autostart ExecutionShortcut Modification",1547.009,Boot or Logon Autostart ExecutionShortcut Modification
+CAPEC-643,CWE-200,Confidentiality,Read Data,"1135,Network Share Discovery",1135,Network Share Discovery
+CAPEC-469,CWE-770,N/A,N/A,"1499.001,Endpoint Denial of ServiceOS Exhaustion Flood",1499.001,Endpoint Denial of ServiceOS Exhaustion Flood
+CAPEC-84,CWE-707,Access Control,Gain Privileges,"1078.001,Valid AccountsDefault Accounts",1078.001,Valid AccountsDefault Accounts
+CAPEC-49,CWE-257,Access Control,Gain Privileges,"1110.001,Brute ForcePassword Guessing",1110.001,Brute ForcePassword Guessing
+CAPEC-37,CWE-1239,Access Control,Gain Privileges,"1552.004,Unsecured CredentialsPrivate Keys",1552.004,Unsecured CredentialsPrivate Keys
+CAPEC-115,CWE-287,N/A,N/A,"1548,Abuse Elevation Control Mechanism",1548,Abuse Elevation Control Mechanism
+CAPEC-2,CWE-645,Availability,Resource Consumption,"1531,Account Access Removal",1531,Account Access Removal
+CAPEC-71,CWE-172,Access Control,Bypass Protection Mechanism,"1078.001,Valid AccountsDefault Accounts",1078.001,Valid AccountsDefault Accounts
+CAPEC-197,CWE-770,Availability,Resource Consumption,"1552.001,Unsecured CredentialsCredentials in files",1552.001,Unsecured CredentialsCredentials in files
+CAPEC-497,CWE-200,Confidentiality,Read Data,"1083,File and Directory Discovery",1083,File and Directory Discovery
+CAPEC-114,CWE-1244,N/A,N/A,"1548,Abuse Elevation Control Mechanism",1548,Abuse Elevation Control Mechanism
+CAPEC-130,CWE-1325,Availability,Resource Consumption,"1499.003,Endpoint Denial of ServiceApplication Exhaustion Flood",1499.003,Endpoint Denial of ServiceApplication Exhaustion Flood
+CAPEC-13,CWE-15,Access Control,Bypass Protection Mechanism,"1562.003,Impair DefensesImpair Command History Logging",1562.003,Impair DefensesImpair Command History Logging
+CAPEC-13,CWE-15,Access Control,Bypass Protection Mechanism,"1574.006,Hijack Execution FlowDynamic Linker Hijacking",1574.006,Hijack Execution FlowDynamic Linker Hijacking
+CAPEC-13,CWE-15,Access Control,Bypass Protection Mechanism,"1574.007,Hijack Execution FlowPath Interception by PATH Environment Variable",1574.007,Hijack Execution FlowPath Interception by PATH Environment Variable
+CAPEC-105,CWE-138,Access Control,Gain Privileges,"1574.010,Hijack Execution Flow ServicesFile Permissions Weakness",1574.010,Hijack Execution Flow ServicesFile Permissions Weakness
+CAPEC-638,N/A,Access Control,Modify Data,"1542.002,Pre-OS BootComponent Firmware",1542.002,Pre-OS BootComponent Firmware
+CAPEC-657,CWE-494,Access Control,Execute Unauthorized Commands,"1017,Application Deployment Software",1017,Application Deployment Software
