@@ -17,3 +17,10 @@ target_sw				varchar2(200 char),
 title		 			varchar2(200 char),
 version					varchar2(200 char)
 );
+
+COMMENT ON TABLE RESEARCH.cpe is
+'CPE is a structured naming scheme for information technology systems, software, and packages.';
+
+-- Primary Key
+ALTER TABLE RESEARCH.cpe
+ADD CONSTRAINT cpe_pk  PRIMARY KEY (cpe_id); 

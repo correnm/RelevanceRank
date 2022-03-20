@@ -26,3 +26,9 @@ TIER 					NUMBER(2),
 AGE_IN_DAYS 			NUMBER,
 SEVERITY 				VARCHAR2(20 CHAR)
 );
+
+COMMENT ON TABLE RESEARCH.nvd_cve is
+'The NVD is the U.S. government repository of standards based vulnerability management data represented using the Security Content Automation Protocol (SCAP). This data enables automation of vulnerability management, security measurement, and compliance.';
+
+ALTER TABLE RESEARCH.nvd_cve 
+ADD CONSTRAINT nvd_cve_pk  PRIMARY KEY (cve_id);  

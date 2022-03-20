@@ -2,7 +2,7 @@ DROP table RESEARCH.nvd_cpe;
 
 CREATE TABLE RESEARCH.NVD_CPE
 (
-CVE_ID 					VARCHAR2(20 CHAR),
+CVE_ID 					VARCHAR2(20 CHAR) NOT NULL,
 CPE23URI				VARCHAR2(200 char),
 VULNERABLE				VARCHAR2(5 char),
 VERSION_END_INCLUDING	VARCHAR2(200 CHAR),
@@ -11,3 +11,21 @@ VENDOR					VARCHAR2(200 char),
 PRODUCT					VARCHAR2(200 char),
 VERSION					VARCHAR2(100 char)
 );
+
+COMMENT ON TABLE RESEARCH.nvd_cpe is
+'Products affected by a vulnerability';
+
+-- Primary Key
+ALTER TABLE RESEARCH.nvd_cpe
+ADD CONSTRAINT nvd_cpe_pk  PRIMARY KEY (cve_id, cpe23uri);  
+
+-- Foreign key
+ALTER TABLE RESEARCH.nvd_cpe
+ADD CONSTRAINT nvd_cpe_fk1
+  FOREIGN KEY (cve_id)
+  REFERENCES nvd_cve (cve_id);
+  
+ALTER TABLE RESEARCH.nvd_cpe
+ADD CONSTRAINT nvd_cpe_fk2
+  FOREIGN KEY (cpe23URI)
+  REFERENCES cpe (cpe_id);

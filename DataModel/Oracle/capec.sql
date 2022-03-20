@@ -14,3 +14,16 @@ skill_level_high 		VARCHAR2(1000 char),
 skill_level_low 		VARCHAR2(1000 char),
 skill_level_medium 		VARCHAR2(1000 char)
 );
+
+COMMENT ON TABLE RESEARCH.capec is
+'The Common Attack Pattern Enumeration and Classification (CAPEC) is a comprehensive dictionary and classification taxonomy of known attacks that can be used by analysts, developers, testers, and educators to advance community understanding and enhance defenses.';
+
+ALTER TABLE RESEARCH.capec
+ADD CONSTRAINT capec_pk  PRIMARY KEY (capec_id, cwe_id, consequence_scope);  
+
+
+-- Foreign key
+ALTER TABLE RESEARCH.capec
+ADD CONSTRAINT capec_fk1
+FOREIGN KEY (cwe_id)
+REFERENCES cwe (cwe_id);
