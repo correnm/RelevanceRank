@@ -1,0 +1,24 @@
+//Modification History:
+Date	   | Author	       |Description of change
+-----------|---------------|--------------------------------------------------
+20Mar2022  |Corren McCoy   |Initial release
+
+
+//Purpose
+Wordbank to keep track of keyword relationships. Cypher query relationships must be unique
+
+RELATIONSHIP KEYWORD	CYPHER QUERY SUPPORTED
+------------------------|-----------------------------------------
+REFERENCE_EXPLOITS		nvdCve-exploitDB
+INFORMS_CVE				nvdCve-nvd_references
+EXPLOITS_KNOWN			nvdCve-cisaExploitCatalog
+WEAKENED_BY				nvdCve-Cwe
+KNOWN_ATTACK			cwe-capec
+EMPLOYS					capec-attackEnterpriseTechniques
+RELATES_TO				cwe-cwe
+ACHIEVES_GOAL			attackGroups-attackEnterpriseTechniques
+ORIGINATES				attackGroups-countries
+TARGETS					attackGroups-countries
+FOCUS_ON				attackGroups-dhsSectors
+ACHIEVED_THROUGH		attackEnterpriseTactics-attackEnterpriseTechniques
+AFFECTS					nvdCve-cpe

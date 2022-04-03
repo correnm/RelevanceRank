@@ -1,0 +1,162 @@
+//For more advanced styling, you can bring up the style-viewer with :style and copy/paste the graph-style-sheet(GRASS) that is returned.
+//You can edit this stylesheet offline, save the file as a .grassfile, and drag it back onto the drag-area of the viewer.
+//You can reset to the default styles with :stylereset.node 
+node.* {
+  border-color: #9AA1AC;
+  border-width: 2px;
+  color: #A5ABB6;
+  diameter: 80px;
+  text-color-internal: #2A2C34; 
+  font-size: 10px;
+  defaultCaption: "<name>";
+}
+
+node.attackEnterpriseTechniques {
+  diameter: 80px;
+  color: #d2b48c;
+  caption: "{technique_name}";
+  defaultCaption: "<name>";
+  text-color-internal: #2A2C34;
+}
+node.attackEnterpriseTactics {
+  diameter: 80px;
+  color: #ff7070;
+  caption: "{tactic_name}";
+  defaultCaption: "<name>";
+  text-color-internal: #2A2C34;
+}
+node.attackGroupSectors {
+  diameter: 20px;
+  caption: "{sector_id}";
+  defaultCaption: "<name>";
+}
+node.attackGroupTechniques {
+  diameter: 20px;
+  caption: "{technique_id}";
+  defaultCaption: "<name>";
+}
+node.attackGroups {
+  diameter: 80px;
+  color: #8DCC93;
+  caption: "{group_name}";
+  defaultCaption: "<name>";
+  text-color-internal: #2A2C34;
+}
+node.attackTacticTechniques {
+  diameter: 20px;
+  caption: "{technique_id}";
+  defaultCaption: "<name>";
+}
+node.capec {
+  diameter: 80px;
+  color: #ffa500;
+  caption: "{capec_id}";
+  defaultCaption: "<name>";
+  text-color-internal: #2A2C34;
+}
+node.capecTaxonomy {
+  caption: "{technique_name}";
+  diameter: 20px;
+  defaultCaption: "<name>";
+}
+node.cisaExploitCatalog {
+  diameter: 80px;
+  caption: "{vulnerability_name}";
+  defaultCaption: "<name>";
+  color: #ace1af;
+  text-color-internal: #2A2C34;
+}
+node.countries {
+  diameter: 80px;
+  caption: "{country}";
+  color: #f0e130;
+  text-color-internal: #2A2C34;
+  defaultCaption: "<name>";
+}
+node.cpe {
+  diameter: 80px;
+  caption: "{title}";
+  defaultCaption: "<name>";
+  color: #f4bbff;
+  text-color-internal: #2A2C34;
+}
+node.cwe {
+  diameter: 80px;
+  color: #E066FF; 	
+  caption: "{cwe_id}";
+  defaultCaption: "<name>";
+  text-color-internal: #2A2C34;
+}
+node.cweCapec {
+  caption: "{cwe_id}";
+  defaultCaption: "<name>";
+  diameter: 20px;
+}
+node.cweRelatedCwe {
+  caption: "{cwe_id}";
+  defaultCaption: "<name>";
+  diameter: 20px;
+}
+node.dhsSectors {
+  diameter: 80px;
+  caption: "{sector_name}";
+  defaultCaption: "<name>";
+  color: #ffd700; 
+  text-color-internal: #2A2C34;
+}
+node.epss {
+  caption: "{cve_id}";
+  defaultCaption: "<name>";
+  diameter: 20px;
+}
+node.exploitDb {
+  diameter: 80px;
+  caption: "{edb_id}";
+  defaultCaption: "<name>";
+  color: #e7feff;
+  text-color-internal: #2A2C34;
+}
+node.nvdCpe {
+  caption: "{cve_id}";
+  defaultCaption: "<name>";
+  diameter: 20px;
+}
+node.nvdCve {
+  caption: "{cve_id}";
+  defaultCaption: "<name>";
+  color: #00C78C;  
+  diameter: 80px;
+  text-color-internal: #2A2C34;
+}
+node.nvdCwe {
+  caption: "{cwe_id}";
+  defaultCaption: "<name>";
+  diameter: 20px;
+}
+node.nvdReferences {
+  caption: "{tag}";
+  defaultCaption: "<name>";
+  color: #57C7E3;
+  diameter: 80px;
+  text-color-internal: #2A2C34;
+}
+node.targetCountry {
+  caption: "{country}";
+  defaultCaption: "<name>";
+  diameter: 20px;
+}
+//
+// RELATIONSHIPS
+//
+relationship {
+  color: #9AA1AC;
+  shaft-width: 1px;
+  font-size: 10px;
+  padding: 3px;
+  text-color-external: #000000;
+  text-color-internal: #2A2C34;
+  caption: "<type>";
+}
+relationship.RELATES_TO {
+  caption: "{nature}";
+}

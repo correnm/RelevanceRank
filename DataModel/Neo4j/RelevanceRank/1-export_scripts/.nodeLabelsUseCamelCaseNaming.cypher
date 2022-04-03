@@ -1,0 +1,1 @@
+Entities/node labels must use camel case naming starting with a lower case letter

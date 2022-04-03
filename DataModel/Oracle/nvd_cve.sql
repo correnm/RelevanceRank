@@ -32,3 +32,7 @@ COMMENT ON TABLE RESEARCH.nvd_cve is
 
 ALTER TABLE RESEARCH.nvd_cve 
 ADD CONSTRAINT nvd_cve_pk  PRIMARY KEY (cve_id);  
+
+// age the vulnerabilities as the last day in 2021, when collected,  based on the publication date
+UPDATE NVD_CVE 
+SET age_in_days = trunc(to_date('01-dec-2021')-published_date);
