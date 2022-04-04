@@ -14,7 +14,7 @@ CREATE (
 	cvss_temporal_score:			line.CVSS_TEMPORAL_SCORE,
 	cvss_temporal_vector:			line.CVSS_TEMPORAL_VECTOR,
 	exploitability:					toFloat(line.EXPLOITABILITY),
-	impact:							tofloat(line.IMPACT),
+	impact:							toFloat(line.IMPACT),
 	attack_vector:					line.ATTACKVECTOR,
 	attack_complexity:				line.ATTACKCOMPLEXITY,
 	privileges_required:			line.PRIVILEGESREQUIRED,

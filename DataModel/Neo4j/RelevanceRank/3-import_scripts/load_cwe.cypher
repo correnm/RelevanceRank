@@ -9,7 +9,7 @@ CREATE (
 	{
 		cwe_id: 				line.CWE_ID,
 		cwe_name:				line.NAME,
-		decription:				line.DESCRIPTION,
+		description:			line.DESCRIPTION,
 		likelihood_ef_exploit:	line.LIKELIHOOD_OF_EXPLOIT
 	}
 )

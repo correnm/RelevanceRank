@@ -1,5 +1,5 @@
 // clear existing data
-MATCH (n:nvdCpe) DELETE n;
+CALL apoc.periodic.iterate('MATCH (n:nvdCpe) RETURN n', 'DETACH DELETE n', {batchSize:1000})
 
 // Oracle table has 630K records
 // jdbc driver must be loaded in the plugins folder for THIS neo4j database installation
