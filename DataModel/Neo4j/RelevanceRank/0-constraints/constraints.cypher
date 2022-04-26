@@ -43,3 +43,8 @@ ASSERT (node.cve_id, node.cwe_id) IS NODE KEY;
 CREATE CONSTRAINT cons_nvdReferences_nk  IF NOT EXISTS ON (node:nvdReferences) 
 ASSERT (node.cve_id, node.url, node.name, node.tag) IS NODE KEY;
 //
+CREATE CONSTRAINT cons_organizations_nk  IF NOT EXISTS ON (node:organizations) 
+ASSERT (node.org_id) IS NODE KEY;
+//
+CREATE CONSTRAINT cons_sotware_nk  IF NOT EXISTS ON (node:software) 
+ASSERT (node.software_id) IS NODE KEY;

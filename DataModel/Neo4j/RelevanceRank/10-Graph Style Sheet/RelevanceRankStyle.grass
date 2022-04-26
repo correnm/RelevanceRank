@@ -140,6 +140,20 @@ node.nvdReferences {
   diameter: 80px;
   text-color-internal: #2A2C34;
 }
+node.organizations {
+  caption: "{org_id}";
+  defaultCaption: "<name>";
+  color: #F5DEB3;
+  diameter: 80px;
+  text-color-internal: #2A2C34;
+}
+node.software {
+  caption: "{product}";
+  defaultCaption: "<name>";
+  color: #FFF0F5;
+  diameter: 80px;
+  text-color-internal: #2A2C34;
+}
 node.targetCountry {
   caption: "{country}";
   defaultCaption: "<name>";

@@ -22,3 +22,7 @@ TARGETS					attackGroups-countries
 FOCUS_ON				attackGroups-dhsSectors
 ACHIEVED_THROUGH		attackEnterpriseTactics-attackEnterpriseTechniques
 AFFECTS					nvdCve-cpe
+AFFILIATED_WITH         dhsSectors-organizations
+OPERATES_IN  			countries-organizations
+INSTALLS				organizations-software
+HAS_VERSION				software-cpe
