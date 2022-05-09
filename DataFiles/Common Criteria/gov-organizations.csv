@@ -1,0 +1,5 @@
+ORG_ID,ORGANIZATION_NAME,ORGANIZATION_SHORT_NAME,SECTOR_ID,ENROLLMENT,WEB_LINK,COUNTRY_SHORT_NAME
+GOV-S,"Government, Small",GOV-S,CI11,,,United States
+GOV-M,"Government, Medium",GOV-M,CI11,,,United States
+GOV-L,"Government, Large",GOV-L,CI11,,,United States
+GOV-XL,"Government, Extra Large",GOV-XL,CI11,,,United States

@@ -4,14 +4,14 @@ CREATE TABLE RESEARCH.org_software
 (
 ORG_ID					VARCHAR2(10 char) NOT NULL,
 software_id				VARCHAR2(10 char),
-org_software_name		VARCHAR2(100 char) NOT NULL
+org_software_name		VARCHAR2(500 char) NOT NULL
 );
 
 COMMENT ON TABLE RESEARCH.org_software is
 'Software from the organizations software list.';
 
 ALTER TABLE RESEARCH.org_software 
-ADD CONSTRAINT org_software_pk  PRIMARY KEY (org_id, org_software_name);  
+ADD CONSTRAINT org_software_pk  PRIMARY KEY (org_id, software_id);  
 
 -- Foreign key
 ALTER TABLE RESEARCH.org_software
