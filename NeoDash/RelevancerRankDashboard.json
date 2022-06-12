@@ -2,18 +2,18 @@
   "title": "A Relevance-based Model for Ranking Vulnerabilities",
   "version": "2.1",
   "settings": {
-    "pagenumber": 4,
+    "pagenumber": 1,
     "editable": true,
     "fullscreenEnabled": true,
     "parameters": {
       "neodash_organizations_org_id": null,
-      "neodash_academia_org_id": "REGENT",
+      "neodash_academia_org_id": "WLU",
       "neodash_government_org_id": "GOV-L",
       "neodash_targets_country": null,
       "neodash_attackgroups_country": null,
       "neodash_targetcountry_country": "United States",
-      "neodash_nvdcve_cve_year": 2021,
-      "neodash_countries_country": "Russia"
+      "neodash_countries_country": "China",
+      "neodash_nvdcve_cve_year": 2018
     }
   },
   "pages": [
@@ -5473,7 +5473,7 @@
           "x": 0,
           "y": 7,
           "title": "NVD Severity by Year 2018 to 2021",
-          "query": "MATCH (n:nvdCve)\nWHERE n.cve_year <> 2022\nRETURN\nn.cve_year as Year,\nn.severity as Severity,\ncount(n) as Vulns\nORDER by n.cve_year\n",
+          "query": "MATCH (n:nvdCve)\nWHERE n.cve_year <> 2022 and n.severity is not null\nRETURN\nn.cve_year as Year,\nn.severity as Severity,\nCASE n.severity\nWHEN 'LOW' THEN 1\nWHEN 'MEDIUM' THEN 2\nWHEN 'HIGH' THEN 3\nWHEN 'CRITICAL' THEN 4\nELSE n.severity\nEND as severityOrder,\ncount(n) as Vulns\nORDER by n.cve_year, severityOrder ASC\n",
           "width": 6,
           "type": "bar",
           "height": 2,
@@ -5496,7 +5496,7 @@
           "x": 6,
           "y": 7,
           "title": "NVD Severity By Year 2018 to 2021",
-          "query": "MATCH (n:nvdCve)\nWHERE n.cve_year <> 2022\nRETURN\nn.cve_year as Year,\nn.severity as Severity,\ncount(n) as Vulns\nORDER by n.cve_year, n.severity\n\n\n",
+          "query": "MATCH (n:nvdCve)\nWHERE n.cve_year <> 2022 and n.severity is not null\nRETURN\nn.cve_year as Year,\nn.severity as Severity,\nCASE n.severity\nWHEN 'LOW' THEN 1\nWHEN 'MEDIUM' THEN 2\nWHEN 'HIGH' THEN 3\nWHEN 'CRITICAL' THEN 4\nELSE n.severity\nEND as severityOrder,\ncount(n) as Vulns\nORDER by n.cve_year, severityOrder ASC\n\n\n",
           "width": 6,
           "type": "table",
           "height": 2,
@@ -6139,8 +6139,7 @@
             "countries": "country",
             "dhsSectors": "(label)",
             "nvdCve": "cve_id",
-            "exploitDb": "cve_id",
-            "cisaExploitCatalog": "cve_id"
+            "exploitDb": "(label)"
           },
           "settings": {
             "nodePositions": {
@@ -26969,7 +26968,7 @@
           "x": 0,
           "y": 7,
           "title": "Threat Group Country of Origin and Countries Targeted",
-          "query": "match (g1:attackGroups)-[o:ORIGINATES]-(c1:countries {country:$neodash_countries_country}),\n(g2:attackGroups)-[t:TARGETS]-(c2:countries)\nreturn \n{id: g1.group_name, label:\"Origin\", point:point({longitude: toFloat(c1.longitude), latitude: toFloat(c1.latitude)})},\n{id: g2.group_name, label:\"Target\", point:point({longitude: toFloat(c2.longitude), latitude: toFloat(c2.latitude)})},\n{start: g1.group_name, end: g2.group_name, type: \"ORIGINATES\", id: 1}\nLIMIT 10000\n",
+          "query": "match (g1:attackGroups)-[o:ORIGINATES]-(c1:countries {country:$neodash_countries_country}),\n(g2:attackGroups)-[t:TARGETS]-(c2:countries)\nreturn \n{id: g1.group_name, label:\"Origin\", point:point({longitude: toFloat(c1.longitude), latitude: toFloat(c1.latitude)})},\n{id: g2.group_name, label:\"Target\", point:point({longitude: toFloat(c2.longitude), latitude: toFloat(c2.latitude)})},\n{start: g1.group_name, end: g2.group_name, type: \"TARGETS\", id: 1}\nLIMIT 10000\n",
           "width": 12,
           "type": "map",
           "height": 4,
@@ -26981,7 +26980,7 @@
         },
         {
           "title": "Vulns Per Month by Threat Group in Given Country and Year",
-          "query": "MATCH path=(n:nvdCve )-[w:WEAKENED_BY]-(c:cwe)-[k:KNOWN_ATTACK]-(ca:capec)-[e:EMPLOYS]-(a:attackEnterpriseTechniques)-[r:ACHIEVES_GOAL]-(ag:attackGroups)-[o:ORIGINATES]-(co:countries {country:$neodash_countries_country} )\nWHERE n.cve_year= $neodash_nvdcve_cve_year \nRETURN ag.group_name as ThreatGroup, n.cve_month as Month, count(DISTINCT n.cve_id) as Vulns\norder by n.cve_month ASC\nLIMIT 10000",
+          "query": "MATCH path=(n:nvdCve )-[w:WEAKENED_BY]-(c:cwe)-[k:KNOWN_ATTACK]-(ca:capec)-[e:EMPLOYS]-(a:attackEnterpriseTechniques)-[r:ACHIEVES_GOAL]-(ag:attackGroups)-[o:ORIGINATES]-(co:countries {country:$neodash_countries_country} )\nWHERE n.cve_year= $neodash_nvdcve_cve_year \nRETURN ag.group_name as ThreatGroup,\nn.cve_month,\nCASE n.cve_month\n  WHEN 1 THEN 'Jan'\n  WHEN 2 THEN 'Feb'\n  WHEN 3 THEN 'Mar'\n  WHEN 4 THEN 'Apr'\n  WHEN 5 THEN 'May'\n  WHEN 6 THEN 'Jun'\n  WHEN 7 THEN 'Jul'\n  WHEN 8 THEN 'Aug'\n  WHEN 9 THEN 'Sep'\n  WHEN 10 THEN 'Oct'\n  WHEN 11 THEN 'Nov'\n  WHEN 12 THEN 'Dec'\n  ELSE n.cve_month\nEND AS Month,\ncount(DISTINCT n.cve_id) as Vulns\norder by n.cve_month ASC\nLIMIT 10000",
           "width": 12,
           "height": 2,
           "x": 0,
@@ -26996,6 +26995,27 @@
             "legend": true,
             "showOptionalSelections": true,
             "layout": "horizontal"
+          }
+        },
+        {
+          "title": "CVEs Mapped to MITRE ATT&CK Techniques",
+          "query": "MATCH (n:nvdCve)-[w:WEAKENED_BY]-(c:cwe)-[k:KNOWN_ATTACK]-(ca:capec)-[e:EMPLOYS]-(a:attackEnterpriseTechniques)-[r:ACHIEVES_GOAL]-(ag:attackGroups)\nRETURN DISTINCT n.cve_year as Year, a.technique_name as Technique, count(distinct n.cve_id) as Vulns\norder by Year, Vulns desc\nLIMIT 1000\n\n\n",
+          "width": 12,
+          "height": 2,
+          "x": 0,
+          "y": 11,
+          "type": "bar",
+          "selection": {
+            "index": "Year",
+            "value": "Vulns",
+            "key": "Technique"
+          },
+          "settings": {
+            "showOptionalSelections": true,
+            "groupMode": "grouped",
+            "barValues": false,
+            "layout": "horizontal",
+            "legend": false
           }
         }
       ]
@@ -27079,7 +27099,30 @@
     },
     {
       "title": "Exploits",
-      "reports": []
+      "reports": [
+        {
+          "title": "Map Threat Group Network Attacks to Vulns, Exploits, and Sectors",
+          "query": "// Map Threat Groups Network Attack to Vulns and Exploits and Sectors\nMATCH (n:nvdCve {attack_vector:\"NETWORK\"} )-[w:WEAKENED_BY]-(c:cwe)-[k:KNOWN_ATTACK]-(ca:capec)-[e:EMPLOYS]-(a:attackEnterpriseTechniques)-[r:ACHIEVES_GOAL]-(ag:attackGroups)-[o:ORIGINATES]-(co:countries {country:$neodash_countries_country})\nWHERE n.cve_year=$neodash_nvdcve_cve_year \nOPTIONAL MATCH (ag:attackGroups)-[t:TARGETS]-(co2:countries) \nOPTIONAL MATCH (n:nvdCve)-[re:REFERENCE_EXPLOITS]-(edb:exploitDb)\nOPTIONAL MATCH (n:nvdCve)-[ex:EXPLOITS_KNOWN]-(cec:cisaExploitCatalog)\nOPTIONAL MATCH (ag:attackGroups)-[fo:FOCUS_ON]-(dhs:dhsSectors)\nRETURN * \nLIMIT 10000\n",
+          "width": 12,
+          "height": 3,
+          "x": 0,
+          "y": 0,
+          "type": "graph",
+          "selection": {
+            "attackEnterpriseTechniques": "technique_id",
+            "attackGroups": "group_name",
+            "cwe": "cwe_id",
+            "capec": "capec_id",
+            "countries": "country",
+            "dhsSectors": "sector_name",
+            "nvdCve": "cve_id",
+            "cisaExploitCatalog": "product"
+          },
+          "settings": {
+            "nodePositions": {}
+          }
+        }
+      ]
     },
     {
       "title": "Ranking Profiles",
@@ -27138,7 +27181,7 @@
         },
         {
           "title": "nDCG",
-          "query": "return (6.5)\n\n\n",
+          "query": "return (06.5)\n\n\n",
           "width": 3,
           "height": 1,
           "x": 0,
