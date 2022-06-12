@@ -5,7 +5,7 @@ MATCH (n)-[r:HAS_VERSION]->() DELETE r
 call apoc.load.driver('oracle.jdbc.driver.OracleDriver')
 
 CALL apoc.periodic.iterate(
-'MATCH (x:cpe),(n:software) WHERE x.part = n.part and x.product = n.product and x.vendor=n.vendor RETURN x,n',
+'MATCH (x:cpe),(n:software) WHERE x.product = n.product and x.vendor=n.vendor RETURN x,n',
 'MERGE (n)-[:HAS_VERSION]->(x)',
 {batchSize:1000, parallel:true}
 )

@@ -1,198 +1,198 @@
-"GROUP_ID","SHORT_FORM_NAME"
-"G0007","United States"
-"G0012","EAST ASIA"
-"G0016","ASIA"
-"G0016","Europe"
-"G0016","MIDDLE EAST"
-"G0016","NATO"
-"G0016","United Kingdom"
-"G0016","United States"
-"G0017","Japan"
-"G0019","SOUTHEAST ASIA"
-"G0019","UNITED NATIONS"
-"G0021","EUROPE"
-"G0021","MIDDLE EAST"
-"G0021","United States"
-"G0022","Hong Kong"
-"G0022","United States"
-"G0023","Japan"
-"G0023","Taiwan"
-"G0025","United States"
-"G0030","SOUTHEAST ASIA"
-"G0031","Japan"
-"G0031","South Korea"
-"G0031","United States"
-"G0034","France"
-"G0034","Georgia"
-"G0034","Ukraine"
-"G0038","Emirati"
-"G0040","United States"
-"G0041"," Belgium"
-"G0041","China"
-"G0041","Iran"
-"G0041","Russia"
-"G0041","Rwanda"
-"G0041","Sweden"
-"G0043","Iran"
-"G0043","Syria"
-"G0045","Japan"
-"G0046","United States"
-"G0047","Ukraine"
-"G0048","Russia"
-"G0049","MIDDLE EAST"
-"G0050","Cambodia"
-"G0050","Laos"
-"G0050","Philippines"
-"G0050","Vietnam"
-"G0051","NORTH AMERICA"
-"G0052","Germany"
-"G0052","Irael"
-"G0052","Jordan"
-"G0052","Saudi Arabia"
-"G0052","Turkey"
-"G0052","United States"
-"G0054","SOUTH AMERICA"
-"G0054","SOUTHEST ASIA"
-"G0055","Turkey"
-"G0056","Turkey"
-"G0060","Japan"
-"G0062","Belarus"
-"G0062","Mongolia"
-"G0062","Russia"
-"G0064","Saudi Arabia"
-"G0064","South Korea"
-"G0064","United States"
-"G0065","Canada"
-"G0065","EUROPE"
-"G0065","MIDDLE EAST"
-"G0065","SOUTHEAST ASIA"
-"G0065","United States"
-"G0067","China"
-"G0067","India"
-"G0067","Japan"
-"G0067","Kuwait"
-"G0067","Nepal "
-"G0067","Romania"
-"G0067","Russia"
-"G0067","South Korea"
-"G0067","Vietnam"
-"G0068","SOUTHEAST ASIA"
-"G0069","EUROPE"
-"G0069","MIDDLE EAST"
-"G0069","NORTH AMERICA"
-"G0071","ASIA"
-"G0071","EUROE"
-"G0071","United States"
-"G0072","Argentina"
-"G0072","Canada"
-"G0072","Indonesia"
-"G0072","Japan"
-"G0072","Singapore"
-"G0072","Vietnam"
-"G0074","United States"
-"G0075","SOUTHEAST ASIA"
-"G0076","SOUTHEST ASIA"
-"G0076","United States"
-"G0077","MIDDLE EAST"
-"G0078","Russia"
-"G0078","Spain"
-"G0078","United Kingdom"
-"G0078","United States"
-"G0079","MIDDLE EAST"
-"G0080","CENTRAL ASIA"
-"G0080","EASTERN EUROPE"
-"G0080","SOUTHEAST ASIA"
-"G0081","Hong Kong"
-"G0081","Philippines"
-"G0081","Taiwan"
-"G0082","Bangladesh"
-"G0082","Chile"
-"G0084","MIDDLE EAST"
-"G0087","AFRICA"
-"G0087","ASIA"
-"G0087","EUROPE"
-"G0087","Iran"
-"G0087","NORTH AMERICA"
-"G0089","Pakistan"
-"G0090","MIDDLE EAST"
-"G0091","Azerbijan"
-"G0091","Belarus"
-"G0091","Kazakhstan"
-"G0091","Poland"
-"G0091","Russia"
-"G0091","Ukraine"
-"G0094","EUROPE"
-"G0094","Russia"
-"G0094","South Korea"
-"G0094","UNITED NATIONS"
-"G0094","United States"
-"G0095","ASIA"
-"G0095","EUROPE"
-"G0095","Russia"
-"G0095","United States"
-"G0095","Venezuela"
-"G0098","EAST ASIA"
-"G0098","Hong Kong"
-"G0098","Japan"
-"G0098","Taiwan"
-"G0099","Columbia"
-"G0100","AFRICA"
-"G0100","ASIA"
-"G0100","EUROPE"
-"G0100","MIDDLE EAST"
-"G0100","Russia"
-"G0100","United States"
-"G0103","Myanmar"
-"G0105","EASTERN EUROPE"
-"G0107","Singapore"
-"G0112","MIDDLE EAST"
-"G0114","Taiwan"
-"G0116","China"
-"G0116","France"
-"G0116","Germany"
-"G0116","United Kingdom"
-"G0116","United States"
-"G0117","Australia"
-"G0117","EUROPE"
-"G0117","MIDDLE EAST"
-"G0117","NORTH AFRICA"
-"G0117","NORTH AMERICA"
-"G0121","ASIA"
-"G0121","Afghanistan"
-"G0121","China"
-"G0121","Nepal"
-"G0121","Pakistan"
-"G0125","United States"
-"G0126","China"
-"G0126","Japan"
-"G0126","North Korea"
-"G0126","Poland"
-"G0126","Russia"
-"G0128","United States"
-"G0129","Germany"
-"G0129","Mongolia"
-"G0129","Myanmar"
-"G0129","Pakistan"
-"G0129","United States"
-"G0129","Vietnam"
-"G0130","Iran"
-"G0130","United States"
-"G0131","Japan"
-"G0131","South Korea"
-"G0131","Taiwan"
-"G0131","United States"
-"G0132","AMERICAS"
-"G0132","ASIA"
-"G0132","AUSTRALIA"
-"G0132","EUROPE"
-"G0132","SOUTH ASIA"
-"G0133","CENTRAL ASIA"
-"G0134","Afghanistan"
-"G0134","India"
-"G0135","AFRICA"
-"G0135","ASIA"
-"G0135","EUROPE"
-"G0135","MIDDLE EAST"
-"G0136","CENTRAL ASIA"
-"G0137","Iran"
-"G0138","South Korea"
+GROUP_ID,SHORT_FORM_NAME
+G0007,United States
+G0012,EAST ASIA
+G0016,ASIA
+G0016,Europe
+G0016,MIDDLE EAST
+G0016,NATO
+G0016,United Kingdom
+G0016,United States
+G0017,Japan
+G0019,SOUTHEAST ASIA
+G0019,UNITED NATIONS
+G0021,EUROPE
+G0021,MIDDLE EAST
+G0021,United States
+G0022,Hong Kong
+G0022,United States
+G0023,Japan
+G0023,Taiwan
+G0025,United States
+G0030,SOUTHEAST ASIA
+G0031,Japan
+G0031,"Korea, South"
+G0031,United States
+G0034,France
+G0034,Georgia
+G0034,Ukraine
+G0038,Emirati
+G0040,United States
+G0041, Belgium
+G0041,China
+G0041,Iran
+G0041,Russia
+G0041,Rwanda
+G0041,Sweden
+G0043,Iran
+G0043,Syria
+G0045,Japan
+G0046,United States
+G0047,Ukraine
+G0048,Russia
+G0049,MIDDLE EAST
+G0050,Cambodia
+G0050,Laos
+G0050,Philippines
+G0050,Vietnam
+G0051,NORTH AMERICA
+G0052,Germany
+G0052,Israel
+G0052,Jordan
+G0052,Saudi Arabia
+G0052,Turkey
+G0052,United States
+G0054,SOUTH AMERICA
+G0054,SOUTHEST ASIA
+G0055,Turkey
+G0056,Turkey
+G0060,Japan
+G0062,Belarus
+G0062,Mongolia
+G0062,Russia
+G0064,Saudi Arabia
+G0064,"Korea, South"
+G0064,United States
+G0065,Canada
+G0065,EUROPE
+G0065,MIDDLE EAST
+G0065,SOUTHEAST ASIA
+G0065,United States
+G0067,China
+G0067,India
+G0067,Japan
+G0067,Kuwait
+G0067,Nepal 
+G0067,Romania
+G0067,Russia
+G0067,"Korea, South"
+G0067,Vietnam
+G0068,SOUTHEAST ASIA
+G0069,EUROPE
+G0069,MIDDLE EAST
+G0069,NORTH AMERICA
+G0071,ASIA
+G0071,EUROE
+G0071,United States
+G0072,Argentina
+G0072,Canada
+G0072,Indonesia
+G0072,Japan
+G0072,Singapore
+G0072,Vietnam
+G0074,United States
+G0075,SOUTHEAST ASIA
+G0076,SOUTHEST ASIA
+G0076,United States
+G0077,MIDDLE EAST
+G0078,Russia
+G0078,Spain
+G0078,United Kingdom
+G0078,United States
+G0079,MIDDLE EAST
+G0080,CENTRAL ASIA
+G0080,EASTERN EUROPE
+G0080,SOUTHEAST ASIA
+G0081,Hong Kong
+G0081,Philippines
+G0081,Taiwan
+G0082,Bangladesh
+G0082,Chile
+G0084,MIDDLE EAST
+G0087,AFRICA
+G0087,ASIA
+G0087,EUROPE
+G0087,Iran
+G0087,NORTH AMERICA
+G0089,Pakistan
+G0090,MIDDLE EAST
+G0091,Azerbijan
+G0091,Belarus
+G0091,Kazakhstan
+G0091,Poland
+G0091,Russia
+G0091,Ukraine
+G0094,EUROPE
+G0094,Russia
+G0094,"Korea, South"
+G0094,UNITED NATIONS
+G0094,United States
+G0095,ASIA
+G0095,EUROPE
+G0095,Russia
+G0095,United States
+G0095,Venezuela
+G0098,EAST ASIA
+G0098,Hong Kong
+G0098,Japan
+G0098,Taiwan
+G0099,Columbia
+G0100,AFRICA
+G0100,ASIA
+G0100,EUROPE
+G0100,MIDDLE EAST
+G0100,Russia
+G0100,United States
+G0103,Myanmar
+G0105,EASTERN EUROPE
+G0107,Singapore
+G0112,MIDDLE EAST
+G0114,Taiwan
+G0116,China
+G0116,France
+G0116,Germany
+G0116,United Kingdom
+G0116,United States
+G0117,Australia
+G0117,EUROPE
+G0117,MIDDLE EAST
+G0117,NORTH AFRICA
+G0117,NORTH AMERICA
+G0121,ASIA
+G0121,Afghanistan
+G0121,China
+G0121,Nepal
+G0121,Pakistan
+G0125,United States
+G0126,China
+G0126,Japan
+G0126,"Korea, South"
+G0126,Poland
+G0126,Russia
+G0128,United States
+G0129,Germany
+G0129,Mongolia
+G0129,Myanmar
+G0129,Pakistan
+G0129,United States
+G0129,Vietnam
+G0130,Iran
+G0130,United States
+G0131,Japan
+G0131,"Korea, South"
+G0131,Taiwan
+G0131,United States
+G0132,AMERICAS
+G0132,ASIA
+G0132,AUSTRALIA
+G0132,EUROPE
+G0132,SOUTH ASIA
+G0133,CENTRAL ASIA
+G0134,Afghanistan
+G0134,India
+G0135,AFRICA
+G0135,ASIA
+G0135,EUROPE
+G0135,MIDDLE EAST
+G0136,CENTRAL ASIA
+G0137,Iran
+G0138,"Korea, South"

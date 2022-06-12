@@ -10,7 +10,13 @@ node.* {
   font-size: 10px;
   defaultCaption: "<name>";
 }
-
+node.academia {
+  caption: "{org_id}";
+  defaultCaption: "<name>";
+  color: #DEB887;
+  diameter: 80px;
+  text-color-internal: #2A2C34;
+}
 node.attackEnterpriseTechniques {
   diameter: 80px;
   color: #d2b48c;
@@ -20,7 +26,7 @@ node.attackEnterpriseTechniques {
 }
 node.attackEnterpriseTactics {
   diameter: 80px;
-  color: #ff7070;
+  color: #EEAD0E;
   caption: "{tactic_name}";
   defaultCaption: "<name>";
   text-color-internal: #2A2C34;
@@ -37,7 +43,7 @@ node.attackGroupTechniques {
 }
 node.attackGroups {
   diameter: 80px;
-  color: #8DCC93;
+  color: #E9967A;
   caption: "{group_name}";
   defaultCaption: "<name>";
   text-color-internal: #2A2C34;
@@ -63,7 +69,7 @@ node.cisaExploitCatalog {
   diameter: 80px;
   caption: "{vulnerability_name}";
   defaultCaption: "<name>";
-  color: #ace1af;
+  color: #FF4500;
   text-color-internal: #2A2C34;
 }
 node.countries {
@@ -113,7 +119,14 @@ node.exploitDb {
   diameter: 80px;
   caption: "{edb_id}";
   defaultCaption: "<name>";
-  color: #e7feff;
+  color: #FF6A6A;
+  text-color-internal: #2A2C34;
+}
+node.government {
+  caption: "{org_id}";
+  defaultCaption: "<name>";
+  color: #F5DEB3;
+  diameter: 80px;
   text-color-internal: #2A2C34;
 }
 node.nvdCpe {
@@ -137,13 +150,6 @@ node.nvdReferences {
   caption: "{tag}";
   defaultCaption: "<name>";
   color: #57C7E3;
-  diameter: 80px;
-  text-color-internal: #2A2C34;
-}
-node.organizations {
-  caption: "{org_id}";
-  defaultCaption: "<name>";
-  color: #F5DEB3;
   diameter: 80px;
   text-color-internal: #2A2C34;
 }

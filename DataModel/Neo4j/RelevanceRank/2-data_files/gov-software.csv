@@ -1,0 +1,57 @@
+﻿SOFTWARE_ID,CPE_ID,SW_PART,SW_VENDOR,SW_PRODUCT,SW_VERSION,ORG_SOFTWARE_NAME,ORG_SOFTWARE_VENDOR
+SOFT100,cpe:2.3:h:cisco:ncs_1001:-:*:*:*:*:*:*:* ,h,cisco,ncs_1001,,Cisco Network Convergence System (NCS) 1000 Series,"Cisco Systems, Inc."
+SOFT101,cpe:2.3:a:checkpoint:security_gateway:r71.00:*:*:*:*:*:*:* ,a,checkpoint,security_gateway,,Check Point Software Technologies Ltd. Security Gateway and Maestro Hyperscale Appliances R81.00,Check Point Software Technologies Ltd.
+SOFT102,cpe:2.3:h:cisco:cloud_services_router_1000v:-:*:*:*:*:*:*:*,h,cisco,cloud_services_router_1000v,,"Cisco Aggregation Services Router 1000 Series (ASR1K), Cisco Cloud Services Router 1000V (CSR1000V), Cisco Integrated Services Router 1100 Series (ISR1100), Cisco Integrated Services Router 4200 Series (ISR4K) running IOS-XE 17.3","Cisco Systems, Inc."
+SOFT103,cpe:2.3:h:paloaltonetworks:m-500:-:*:*:*:*:*:*:*,h,paloaltonetworks,m-500,,"Palo Alto Networks M-100, M-200, M-500, and M-600 Hardware, and Virtual Appliances all running Panorama 9.0",Palo Alto Networks
+SOFT104,cpe:2.3:h:cisco:esr6300:-:*:*:*:*:*:*:*,h,cisco,esr6300,,Cisco Embedded Services Router (ESR) 6300,"Cisco Systems, Inc."
+SOFT105,cpe:2.3:a:samsung:knox:1.0:*:*:*:*:*:*:*,a,samsung,knox,,Samsung Knox File Encryption 1.2,"Samsung Electronics Co., Ltd."
+SOFT106,cpe:2.3:a:vmware:workspace_one:2.5.1:*:*:*:*:iphone_os:*:* ,a,vmware,workspace_one,2.5.1,VMware Workspace ONE Boxer Email Client Version 21.05,VMware
+SOFT107,cpe:2.3:a:gigamon:gigavue:5.4:*:*:*:*:*:*:* ,a,gigamon,gigavue,,Gigamon GigaVUE Version 5.9.00,Gigamon LLC
+SOFT108,cpe:2.3:a:sonicwall:global_vpn_client:-:*:*:*:*:*:*:*,a,sonicwall,global_vpn_client,,SonicWall SonicOS Enhanced V6.5.4 with VPN and IPS on TZ and SOHO Appliances,"SonicWALL, Inc"
+SOFT109,cpe:2.3:a:a10networks:application_delivery_controller:-:*:*:*:*:*:*:*,a,citrix,application_delivery_controller,,Citrix ADC (MPX FIPS and VPX FIPS) Version 12.1,"Citrix Systems, Inc."
+SOFT110,cpe:2.3:a:oneidentity:cloud_access_manager:-:*:*:*:*:*:*:* ,a,oneidentity,cloud_access_manager,,One Identity Manager v8.1,One Identity LLC
+SOFT111,cpe:2.3:a:sonicwall:secure_mobile_access:-:*:*:*:*:*:*:*,a,sonicwall,secure_mobile_access,,SonicWall Secure Mobile Access (SMA) v12.4,"SonicWALL, Inc"
+SOFT112,cpe:2.3:a:vmware:carbon_black_app_control:8.0:*:*:*:*:*:*:* ,a,vmware,carbon_black_app_control,,VMware Carbon Black App Control v8.8.2,VMware
+SOFT113,cpe:2.3:h:arubanetworks:aruba_2930f:-:*:*:*:*:*:*:*,h,arubanetworks,aruba_2930f,,"Aruba, a Hewlett Packard Enterprise Company 2930F, 2930M, 3810M, and 5400R Switch Series running ArubaOS version 16.08","Aruba, a Hewlett Packard Enterprise Company"
+SOFT114,cpe:2.3:a:tenable:securitycenter:4.6:*:*:*:*:*:*:* ,a,tenable,securitycenter,,Tenable.sc 5.15.0,"Tenable, Inc."
+SOFT115,cpe:2.3:a:samsung:display_solutions:3.01:*:*:*:*:android:*:* ,a,samsung,display_solutions,,Samsung SDS EMM v2.2.5,"Samsung SDS Co., Ltd."
+SOFT116,cpe:2.3:o:vertiv:avocent_umg-4000_firmware:4.2.1.19:*:*:*:*:*:*:*,o,vertiv,avocent_umg-4000_firmware,,Vertiv CYBEX™ SCUSBHIDFILTER Firmware Version 40404-0E7 and Vertiv CYBEX™ SCKM140PP4 KM Switch Firmware Version 40404-0E7,Vertiv IT Systems
+SOFT117,cpe:2.3:a:purestorage:purity:4.7.5:*:*:*:*:*:*:* ,a,purestorage,purity,,FlashArray//X running Purity//FA 5.3,"Pure Storage, Inc."
+SOFT118,cpe:2.3:h:paloaltonetworks:pa-220:-:*:*:*:*:*:*:*,h,paloaltonetworks,pa-220,,"Palo Alto Networks PA-220 Series, PA-800 Series, PA-3000 Series, PA-3200 Series, PA-5200 Series, PA-7000 Series, and VM Series Next-Generation Firewall with PAN-OS 9.0",Palo Alto Networks
+SOFT119,cpe:2.3:a:microfocus:data_protector:10.00:*:*:*:*:*:*:*,a,microfocus,data_protector,,"Micro Focus Data Protector Premium Edition, 2020.05 (A.10.70)",Micro Focus
+SOFT120,cpe:2.3:a:arubanetworks:clearpass:5.0.1:*:*:*:*:*:*:* ,a,arubanetworks,clearpass,5.5.17,Aruba ClearPass Policy Manager 6.9,"Aruba, a Hewlett Packard Enterprise Company"
+SOFT121,cpe:2.3:a:forcepoint:next_generation_firewall:5.5.17:*:*:*:*:*:*:*,a,forcepoint,next_generation_firewall,,Forcepoint NGFW 6.10,Forcepoint LLC
+SOFT122,cpe:2.3:o:redhat:enterprise_linux_eus:4.5:*:*:*:*:*:*:*,o,redhat,enterprise_linux_eus,,Red Hat Enterprise Linux 8.2,"Red Hat, Inc."
+SOFT123,cpe:2.3:h:google:pixel:-:*:*:*:*:*:*:*,h,google,pixel,,Google Pixel Phones on Android 12.0,Google LLC
+SOFT124,cpe:2.3:a:apple:mac_os_x:10.15.2:*:*:*:*:*:*:*,a,apple,mac_os_x,,macOS Catalina 10.15,Apple Inc.
+SOFT125,cpe:2.3:a:jenkins:splunk:-:*:*:*:*:jenkins:*:*,a,jenkins,splunk,,Splunk Enterprise 8.1,"Splunk, Inc."
+SOFT126,cpe:2.3:h:paloaltonetworks:m-100:-:*:*:*:*:*:*:*,h,paloaltonetworks,m-100,,"Palo Alto Networks M-100, M-200, M-500, and M-600 Hardware, and Virtual Appliances all running Panorama 9.0",Palo Alto Networks
+SOFT127,cpe:2.3:a:fortinet:fortiwlc:6.1-2-29:*:*:*:*:*:*:*,a,fortinet,fortiwlc,,FortiWLM Wireless Manager 8.5,"Fortinet, Inc."
+SOFT128,cpe:2.3:o:xerox:altalink_c8070_firmware:-:*:*:*:*:*:*:* ,o,xerox,altalink_c8070_firmware,,Xerox® AltaLink™ B8045 / B8055 / B8065 / B8075 / B8090,Xerox Corporation
+SOFT129,cpe:2.3:h:crestron:dm-nvx-dir-160:-:*:*:*:*:*:*:*,h,crestron,dm-nvx-dir-160,,Crestron DigitalMedia NVX® AV-over-IP v5.2,"Crestron Electronics, Inc."
+SOFT130,cpe:2.3:a:cisco:stealthwatch_enterprise:6.10.2:*:*:*:*:*:*:*,a,cisco,stealthwatch_enterprise,,Cisco Stealthwatch Enterprise 7.1,"Cisco Systems, Inc."
+SOFT131,cpe:2.3:a:samsung:galaxy_apps:-:*:*:*:*:*:*:*,a,samsung,galaxy_apps,,Samsung Galaxy Devices on Android 11 - Spring,"Samsung Electronics Co., Ltd."
+SOFT132,cpe:2.3:a:acronis:cyber_backup:12.5:-:*:*:*:*:*:* ,a,acronis,cyber_backup,,Acronis Cyber Backup 12.5 SCS Hardened Edition Server v12.5,Acronis SCS
+SOFT133,cpe:2.3:a:tenable:nessus_agent:6.10.2:*:*:*:*:*:*:* ,a,tenable,nessus_agent,,Nessus Agent 8.0.0,"Tenable, Inc."
+SOFT134,cpe:2.3:h:cisco:catalyst_ie3200_rugged_switch:-:*:*:*:*:*:*:*,h,cisco,catalyst_ie3200_rugged_switch,,"Cisco Catalyst Industrial Ethernet 3x00 Rugged Series (IE3200, IE3300, IE3400, IE3400H) Switches running IOS-XE 17.3","Cisco Systems, Inc."
+SOFT135,cpe:2.3:a:sailpoint:desktop_password_reset:6.4:*:*:*:*:*:*:*,a,sailpoint,desktop_password_reset,,SailPoint IdentityIQ File Access Manager Version 8.1,"SailPoint Technologies, Inc."
+SOFT136,cpe:2.3:h:arubanetworks:cx_6200f:-:*:*:*:*:*:*:*,h,arubanetworks,cx_6200f,,"Aruba, a Hewlett Packard Enterprise Company, 6200, 6300, 6400, 8320, 8325, 8360 and 8400 Switch Series","Aruba, a Hewlett Packard Enterprise Company"
+SOFT137,cpe:2.3:a:paloaltonetworks:globalprotect:-:*:*:*:*:windows:*:* ,a,paloaltonetworks,globalprotect,,Palo Alto Networks GlobalProtect App Version 5.1.5,Palo Alto Networks
+SOFT138,cpe:2.3:a:tenable:nessus:-:*:*:*:*:*:*:* ,a,tenable,nessus,,Nessus Manager 8.11.1,"Tenable, Inc."
+SOFT139,cpe:2.3:a:cisco:adaptive_security_appliance:9.1.7.4:*:*:*:*:*:*:* ,a,cisco,adaptive_security_appliance,,Cisco ASA 9.12 running on Firepower 4100 and 9300 Security Appliances,"Cisco Systems, Inc."
+SOFT84,cpe:2.3:a:netapp:clustered_data_ontap:-:*:*:*:*:*:*:*,a,netapp,clustered_data_ontap,,NetApp Storage Encryption (NSE) running ONTAP 9.7P13,"NetApp, Inc."
+SOFT85,cpe:2.3:h:tripplite:pdumh15at:-:*:*:*:*:*:*:*,h,tripplite,pdumh15at,,Tripp Lite B002a Secure KVM Switch Series,Tripp Lite
+SOFT86,cpe:2.3:h:paloaltonetworks:m-200:-:*:*:*:*:*:*:*,h,paloaltonetworks,m-200,3.4,"Palo Alto Networks M-100, M-200, M-500, and M-600 Hardware, and Virtual Appliances all running Panorama 9.0",Palo Alto Networks
+SOFT87,cpe:2.3:a:mcafee:advanced_threat_defense:3.4:*:*:*:*:*:*:*,a,mcafee,advanced_threat_defense,12.7,McAfee Advanced Threat Defense 4.12,"McAfee, LLC."
+SOFT88,cpe:2.3:a:blackberry:unified_endpoint_management:12.7:*:*:*:*:*:*:*,a,blackberry,unified_endpoint_management,,"BlackBerry Unified Endpoint Management (UEM) Server and Android Client, version 12",BlackBerry Ltd.
+SOFT89,cpe:2.3:a:fidelissecurity:deception:-:*:*:*:*:*:*:*,a,fidelissecurity,deception,,Fidelis Network and Fidelis Deception v9.3.3,Fidelis Cybersecurity Inc.
+SOFT90,cpe:2.3:o:extremenetworks:extremexos:15.3.5:-:*:*:*:*:*:*,o,extremenetworks,extremexos,15.3.5,"Extreme Networks, Inc. SLX Product Series operating with Version 20.1.1aa","Extreme Networks, Inc."
+SOFT91,cpe:2.3:h:cisco:firepower_4100:-:*:*:*:*:*:*:* ,h,cisco,firepower_4100,,Cisco FTD (NGFW) 6.4 on Firepower 4100 and 9300 Series with FMC/FMCv,"Cisco Systems, Inc."
+SOFT92,cpe:2.3:a:cisco:anyconnect_secure_mobility_client:-:*:*:*:*:*:*:*,a,cisco,anyconnect_secure_mobility_client,,Cisco AnyConnect Secure Mobility Client v4.9 for iOS 13,"Cisco Systems, Inc."
+SOFT93,cpe:2.3:a:watchguard:fireware_xtm:11.8.3:*:*:*:*:*:*:*,a,watchguard,fireware_xtm,11.8.3,WatchGuard Fireware OS v12.6.2 on Firebox NGFWs,"WatchGuard Technologies, Inc."
+SOFT94,cpe:2.3:a:tippingpoint:intrusion_prevention_system:3.1.3:*:*:*:*:*:*:*,a,tippingpoint,intrusion_prevention_system,3.1.3,Trend Micro TippingPoint Threat Protection System (TPS) v5.3,Trend Micro
+SOFT95,cpe:2.3:h:paloaltonetworks:wf-500:-:*:*:*:*:*:*:*,h,paloaltonetworks,wf-500,,Palo Alto Networks WF-500 with WildFire 9.0,Palo Alto Networks
+SOFT96,cpe:2.3:a:mobileiron:core:-:*:*:*:*:*:*:* ,a,mobileiron,core,,MobileIron Platform 11,"MobileIron, an Ivanti Company"
+SOFT97,cpe:2.3:h:arubanetworks:cx_8320:-:*:*:*:*:*:*:* ,h,arubanetworks,cx_8320,,"Aruba, a Hewlett Packard Enterprise Company, 6200, 6300, 6400, 8320, 8325, 8360 and 8400 Switch Series","Aruba, a Hewlett Packard Enterprise Company"
+SOFT98,cpe:2.3:a:cisco:cloud_services_platform_2100:2.0.0:*:*:*:*:*:*:*,a,cisco,cloud_services_platform_2100,2.0.0,Cisco Adaptive Security Appliances (ASA) 9.12 running on Firepower 2100 Series Appliances,"Cisco Systems, Inc."
+SOFT99,cpe:2.3:a:tenable:nessus_network_monitor:5.4:*:*:*:*:*:*:*,a,tenable,nessus_network_monitor,5.4,Nessus Network Monitor 5.12.0,"Tenable, Inc."
